@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B6B66828-83DC-465E-B65B-EA153BA2938A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExchangeLINQ</RootNamespace>
+    <AssemblyName>ExchangeLINQ.NET4</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Reactive, Version=1.0.10621.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessTokens\AccessTokensEntry.cs" />
+    <Compile Include="AccessTokens\AccessTokensFilteredByTokens.cs" />
+    <Compile Include="AccessTokens\AccessTokensFilteredByTokensInvalidate.cs" />
+    <Compile Include="AccessTokens\AccessTokensFilters.cs" />
+    <Compile Include="AccessTokens\AccessTokensInterfaces.cs" />
+    <Compile Include="AccessTokens\AccessTokensInterfacesImpl.cs" />
+    <Compile Include="Answers\AnswersEntry.cs" />
+    <Compile Include="Answers\AnswersFilteredById.cs" />
+    <Compile Include="Answers\AnswersFilteredByQuestionId.cs" />
+    <Compile Include="Answers\AnswersFilteredByUserId.cs" />
+    <Compile Include="Answers\AnswersInterfaces.cs" />
+    <Compile Include="Answers\AnswersInterfacesImpl.cs" />
+    <Compile Include="Applications\ApplicationsEntry.cs" />
+    <Compile Include="Applications\ApplicationsFilteredByTokens.cs" />
+    <Compile Include="Applications\ApplicationsFilteredByTokensDeauthenticate.cs" />
+    <Compile Include="Applications\ApplicationsInterfaces.cs" />
+    <Compile Include="Applications\ApplicationsInterfacesImpl.cs" />
+    <Compile Include="AssociatedUsers\AssociatedUsersEntry.cs" />
+    <Compile Include="AssociatedUsers\AssociatedUsersFilteredById.cs" />
+    <Compile Include="AssociatedUsers\AssociatedUsersFilters.cs" />
+    <Compile Include="Badges\BadgesEntry.cs" />
+    <Compile Include="Badges\BadgesFilteredById.cs" />
+    <Compile Include="Badges\BadgesInterfaces.cs" />
+    <Compile Include="Badges\BadgesInterfacesImpl.cs" />
+    <Compile Include="Comments\CommentsEntry.cs" />
+    <Compile Include="Comments\CommentsFilteredById.cs" />
+    <Compile Include="Comments\CommentsFilteredByPostId.cs" />
+    <Compile Include="Comments\CommentsFilteredByQuestionId.cs" />
+    <Compile Include="Comments\CommentsFilteredByUserId.cs" />
+    <Compile Include="Comments\CommentsFilteredByUserIdReplyTo.cs" />
+    <Compile Include="Comments\CommentsInterfaces.cs" />
+    <Compile Include="Comments\CommentsInterfacesImpl.cs" />
+    <Compile Include="Common\DateTimeExtensions.cs" />
+    <Compile Include="Common\ExchangeUrl.cs" />
+    <Compile Include="Common\Filters.cs" />
+    <Compile Include="Common\Processor\Processor.cs" />
+    <Compile Include="Common\Processor\ProcessorBase.cs" />
+    <Compile Include="Common\Processor\WrapperProcessor.cs" />
+    <Compile Include="Common\State\ProcessorState.cs" />
+    <Compile Include="Common\State\State.cs" />
+    <Compile Include="Common\State\WrapperProcessorState.cs" />
+    <Compile Include="Common\Types\Empty.cs" />
+    <Compile Include="Common\Types\Equal.cs" />
+    <Compile Include="Common\Types\Id.cs" />
+    <Compile Include="Common\Types\In.cs" />
+    <Compile Include="Complex\FilteredByFilter.cs" />
+    <Compile Include="Complex\FilteredByFromDate.cs" />
+    <Compile Include="Complex\FilteredByFromDateToDate.cs" />
+    <Compile Include="Complex\FilteredByPage.cs" />
+    <Compile Include="Complex\FilteredByPagePageSize.cs" />
+    <Compile Include="Complex\Filters.cs" />
+    <Compile Include="Complex\Interfaces.cs" />
+    <Compile Include="Complex\InterfacesImpl.cs" />
+    <Compile Include="Context\INetworkStackExchangeContext.cs" />
+    <Compile Include="Context\IOAuth.cs" />
+    <Compile Include="Context\ISite.cs" />
+    <Compile Include="Context\ISiteStackExchangeContext.cs" />
+    <Compile Include="Context\NetworkStackExchangeContext.cs" />
+    <Compile Include="Context\SiteStackExchangeContext.cs" />
+    <Compile Include="Converters\ColorConverter.cs" />
+    <Compile Include="Converters\HtmlDecodeConverter.cs" />
+    <Compile Include="Converters\UnixTimestampConverter.cs" />
+    <Compile Include="Errors\ErrorsEntry.cs" />
+    <Compile Include="Errors\ErrorsFilteredById.cs" />
+    <Compile Include="Errors\ErrorsFilters.cs" />
+    <Compile Include="EvaluatorExtensions.cs" />
+    <Compile Include="IEvaluator.cs" />
+    <Compile Include="Inbox\InboxEntry.cs" />
+    <Compile Include="Inbox\InboxFilteredByUnread.cs" />
+    <Compile Include="Inbox\InboxFilters.cs" />
+    <Compile Include="Inbox\InboxInterfaces.cs" />
+    <Compile Include="Inbox\InboxInterfacesImpl.cs" />
+    <Compile Include="Info\InfoEntry.cs" />
+    <Compile Include="IWrappedEvaluator.cs" />
+    <Compile Include="Models\AccessToken.cs" />
+    <Compile Include="Models\Answer.cs" />
+    <Compile Include="Models\Badge.cs" />
+    <Compile Include="Models\Badges.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\Error.cs" />
+    <Compile Include="Models\InboxItem.cs" />
+    <Compile Include="Models\InfoItem.cs" />
+    <Compile Include="Models\MigrationInfo.cs" />
+    <Compile Include="Models\NetworkUser.cs" />
+    <Compile Include="Models\PostType.cs" />
+    <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\RelatedSite.cs" />
+    <Compile Include="Models\Relation.cs" />
+    <Compile Include="Models\ResponseWrapper.cs" />
+    <Compile Include="Models\ShallowUser.cs" />
+    <Compile Include="Models\Site.cs" />
+    <Compile Include="Models\SiteState.cs" />
+    <Compile Include="Models\Styling.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Questions\QuestionsEntry.cs" />
+    <Compile Include="Questions\QuestionsFilteredByFeatured.cs" />
+    <Compile Include="Questions\QuestionsFilteredByFeaturedTag.cs" />
+    <Compile Include="Questions\QuestionsFilteredById.cs" />
+    <Compile Include="Questions\QuestionsFilteredByIsRelatedTo.cs" />
+    <Compile Include="Questions\QuestionsFilteredByLinksTo.cs" />
+    <Compile Include="Questions\QuestionsFilteredByNoAnswers.cs" />
+    <Compile Include="Questions\QuestionsFilteredByTag.cs" />
+    <Compile Include="Questions\QuestionsFilteredByUnanswered.cs" />
+    <Compile Include="Questions\QuestionsFilteredByUnansweredTag.cs" />
+    <Compile Include="Questions\QuestionsFilteredByUserId.cs" />
+    <Compile Include="Questions\QuestionsFilters.cs" />
+    <Compile Include="Questions\QuestionsInterfaces.cs" />
+    <Compile Include="Questions\QuestionsInterfacesImpl.cs" />
+    <Compile Include="Questions\QuestionsOrderBy.cs" />
+    <Compile Include="Questions\QuestionsOrderByDescending.cs" />
+    <Compile Include="Search\SearchEntry.cs" />
+    <Compile Include="Search\SearchFilteredByInTitle.cs" />
+    <Compile Include="Search\SearchFilteredByTagged.cs" />
+    <Compile Include="Search\SearchFilteredByTaggedNotTagged.cs" />
+    <Compile Include="Search\SearchFilters.cs" />
+    <Compile Include="Search\SearchInterfaces.cs" />
+    <Compile Include="Search\SearchInterfacesImpl.cs" />
+    <Compile Include="Search\SearchOrderBy.cs" />
+    <Compile Include="Search\SearchOrderByDescending.cs" />
+    <Compile Include="Sites\SitesEntry.cs" />
+    <Compile Include="StackExchangeContext.cs" />
+    <Compile Include="Stubs.cs" />
+    <Compile Include="UrlConstants.cs" />
+    <Compile Include="Users\UsersEntry.cs" />
+    <Compile Include="WebResponseExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Calls.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tags\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

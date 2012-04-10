@@ -1,0 +1,182 @@
+﻿Per-Site Methods
+
+
+Each of these methods operates on a single site at a time, identified site parameter. This parameter can be the full domain name (ie. "stackoverflow.com"), 
+or a short form identified by api_site_parameter on the site object.
+
+Answers
+
+/answers														Get all answers on the site. 
+/answers/{ids}													Get answers identified by a set of ids. 
+/answers/{ids}/comments											Get comments on the answers identified by a set of ids. 
+
+Badges
+
+/badges															Get all badges on the site, in alphabetical order. 
+/badges/{ids}													Get the badges identified by ids. 
+/badges/name													Get all non-tagged-based badges in alphabetical order. 
+/badges/recipients												Get badges recently awarded on the site. 
+/badges/{ids}/recipients										Get the recent recipients of the given badges. 
+/badges/tags													Get all tagged-based badges in alphabetical order. 
+
+Comments
+
+/comments														Get all comments on the site. 
+/comments/{ids}													Get comments identified by a set of ids. 
+
+Events
+
+/events															Get recent events that have occurred on the site. Effectively a stream of new users and content. [auth required]
+
+Info
+
+/info															Get information about the entire site. 
+
+Posts
+
+/posts															Get all posts (questions and answers) in the system. 
+/posts/{ids}													Get all posts identified by a set of ids. Useful for when the type of post (question or answer) is not known. 
+/posts/{ids}/comments											Get comments on the posts (question or answer) identified by a set of ids. 
+/posts/{ids}/revisions											Get revisions on the set of posts in ids. 
+/posts/{ids}/suggested-edits									Get suggested edits on the set of posts in ids. 
+
+Privileges
+
+/privileges														Get all the privileges available on the site.
+
+Questions
+
+/questions														Get all questions on the site. 
+/questions/{ids}												Get the questions identified by a set of ids. 
+/questions/{ids}/answers										Get the answers to the questions identified by a set of ids. 
+/questions/{ids}/comments										Get the comments on the questions identified by a set of ids. 
+/questions/{ids}/linked											Get the questions that link to the questions identified by a set of ids. 
+/questions/{ids}/related										Get the questions that are related to the questions identified by a set of ids.
+/questions/{ids}/timeline										Get the timelines of the questions identified by a set of ids. 
+/questions/featured												Get all questions on the site with active bounties. 
+/questions/unanswered											Get all questions the site considers unanswered. 
+/questions/no-answers											Get all questions on the site with no answers. 
+
+Revisions
+
+/revisions/{ids}												Get all revisions identified by a set of ids. 
+
+Search
+
+/search															Search the site for questions meeting certain criteria. 
+/similar														Search the site based on similarity to a title. 
+
+Suggested Edits
+
+/suggested-edits												Get all the suggested edits on the site. 
+/suggested-edits/{ids}											Get the suggested edits identified by a set of ids. 
+
+Tags
+
+/tags															Get the tags on the site. 
+/tags/{tags}/info												Get tags on the site by their names. 
+/tags/moderator-only											Get the tags on the site that only moderators can use. 
+/tags/required													Get the tags on the site that fulfill required tag constraints. 
+/tags/synonyms
+
+ Get all the tag synonyms on the site. 
+ 
+/tags/{tags}/faq												Get frequently asked questions in a set of tags. 
+/tags/{tags}/related											Get related tags, based on common tag pairings. 
+/tags/{tags}/synonyms											Get the synonyms for a specific set of tags. 
+/tags/{tag}/top-answerers/{period}								Get the top answer posters in a specific tag, either in the last month or for all time. 
+/tags/{tag}/top-askers/{period}									Get the top question askers in a specific tag, either in the last month or for all time. 
+/tags/{tags}/wikis												Get the wiki entries for a set of tags. 
+
+Users
+
+All user methods that take an {ids} parameter have a /me equivalent method that takes an access_token instead. These methods are provided for developer convenience, with the exception of plain /me, which is actually necessary for discovering which user authenticated to an application.
+
+/users															Get all users on the site. 
+/users/{ids}													Get the users identified by a set of ids. 
+/me
+/users/{ids}/answers											Get the answers posted by the users identified by a set of ids.
+/me/answers
+/users/{ids}/badges												Get the badges earned by the users identified by a set of ids.
+/me/badges
+/users/{ids}/comments											Get the comments posted by the users identified by a set of ids.
+/me/comments
+/users/{ids}/comments/{toid}									Get the comments posted by a set of users in reply to another user.
+/me/comments/{toid}
+/users/{ids}/favorites											Get the questions favorited by users identified by a set of ids.
+/me/favorites
+/users/{ids}/mentioned											Get the comments that mention one of the users identified by a set of ids.
+/me/mentioned
+/users/{id}/privileges											Get the privileges the given user has on the site.
+/me/privileges
+/users/{ids}/questions											Get the questions asked by the users identified by a set of ids.
+/me/questions
+/users/{ids}/questions/featured									Get the questions on which a set of users, have active bounties.
+/me/questions/featured
+/users/{ids}/questions/no-answers								Get the questions asked by a set of users, which have no answers.
+/me/questions/no-answers
+/users/{ids}/questions/unaccepted								Get the questions asked by a set of users, which have at least one answer but no accepted answer.
+/me/questions/unaccepted
+/users/{ids}/questions/unanswered								Get the questions asked by a set of users, which are not considered to be adequately answered.
+/me/questions/unanswered
+/users/{ids}/reputation											Get a subset of the reputation changes experienced by the users identified by a set of ids.
+/me/reputation
+/users/{ids}/suggested-edits									Get the suggested edits provided by this user.
+/me/suggested-edits
+/users/{ids}/tags												Get the tags that the users (identified by a set of ids) have been active in.
+/me/tags
+/users/{id}/tags/{tags}/top-answers								Get the top answers a user has posted on questions with a set of tags.
+/me/tags/{tags}/top-answers
+/users/{id}/tags/{tags}/top-questions							Get the top questions a user has posted with a set of tags.
+/me/tags/{tags}/top-questions
+/users/{ids}/timeline											Get a subset of the actions of that have been taken by the users identified by a set of ids.
+/me/timeline
+/users/{id}/top-answer-tags										Get the top tags (by score) a single user has posted answers in.
+/me/top-answer-tags
+/users/{id}/top-question-tags									Get the top tags (by score) a single user has asked questions in.
+/me/top-question-tags
+/users/moderators												Get the users who have moderation powers on the site. 
+/users/moderators/elected										Get the users who have moderation powers on the site. 
+/users/{id}/inbox												Get a user's inbox. [auth required]
+/me/inbox 
+/users/{id}/inbox/unread										Get the unread items in a user's inbox. [auth required]
+/me/inbox/unread
+ 
+Network Methods
+
+These methods return data across the entire Stack Exchange network of sites. Accordingly, you do not pass a site parameter to them.
+
+Access Tokens
+
+/access-tokens/{accessTokens}/invalidate						Allows an application to dispose of access_tokens when it is done with them. 
+/access-tokens/{accessTokens}									Allows an application to inspect access_tokens it has, useful for debugging. 
+
+Applications
+
+/apps/{accessTokens}/de-authenticate							Allows an application to de-authorize itself for a set of users. 
+
+Errors
+
+/errors															Get descriptions of all the errors that the API could return. 
+/errors/{id}													Simulate an API error for testing purposes. 
+
+Filters
+
+/filters/create													Create a new filter. 
+/filters/{filters}												Decode a set of filters, useful for debugging purposes. 
+
+Inbox
+
+/inbox															Get a user's inbox, outside of the context of a site. [auth required]
+/inbox/unread													Get the unread items in a user's inbox, outside of the context of a site. [auth required]
+
+Sites
+
+/sites															Get all the sites in the Stack Exchange network. 
+
+Users
+
+/users/{ids}/associated											Get a user's associated accounts.
+/me/associated
+
+  
