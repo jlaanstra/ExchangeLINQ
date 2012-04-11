@@ -1,39 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ExchangeLINQ.Common.Types;
+using ExchangeLINQ.Common;
 
 namespace ExchangeLINQ.Answers
 {
-	internal class AnswersInterfacesImpl : IAnswersIn, IAnswersQuestion, IAnswersId, IAnswersPostingUser
+	internal class AnswersInterfacesImpl : IAnswersIdQuestionPostingUser
 	{
-		/// <summary>
-		/// Method added to hook into the c# params syntax.
-		/// </summary>
-		/// <param name="ids">The tokens.</param>
-		/// <returns></returns>
-		public IEnumerable<int> In(params int[] ids)
+		public IdProp<InCall<FilterQuestionIds, int>> Question
 		{
-			return this.In(ids.AsEnumerable<int>());
+			get { return new IdProp<InCall<FilterQuestionIds, int>>(); }
 		}
 
-		/// <summary>
-		/// Specified to enable intellisense in LINQ query.
-		/// </summary>
-		/// <param name="ids">The tokens.</param>
-		/// <returns></returns>
-		public IEnumerable<int> In(IEnumerable<int> ids)
+		public InCall<FilterIds, int> Id
 		{
-			if (ids.Count() > 100)
-			{
-				throw new InvalidOperationException("You can only specify up to 100 ids.");
-			}
-			return ids;
+			get { return new InCall<FilterIds, int>(); }
 		}
 
-		public IAnswersId Question { get { return this; } }
-
-		public IAnswersId PostingUser { get { return this; } }
-
-		public IAnswersIn Id { get { return this; } }
+		public IdProp<InCall<FilterUserIds, int>> PostingUser
+		{
+			get { return new IdProp<InCall<FilterUserIds, int>>(); }
+		}
 	}
 }

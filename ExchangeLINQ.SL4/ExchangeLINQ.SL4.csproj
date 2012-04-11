@@ -90,6 +90,9 @@
     <Compile Include="..\ExchangeLINQ.NET4\Answers\AnswersFilteredByUserId.cs">
       <Link>Answers\AnswersFilteredByUserId.cs</Link>
     </Compile>
+    <Compile Include="..\ExchangeLINQ.NET4\Answers\AnswersFilters.cs">
+      <Link>Answers\AnswersFilters.cs</Link>
+    </Compile>
     <Compile Include="..\ExchangeLINQ.NET4\Answers\AnswersInterfaces.cs">
       <Link>Answers\AnswersInterfaces.cs</Link>
     </Compile>
@@ -188,6 +191,9 @@
     </Compile>
     <Compile Include="..\ExchangeLINQ.NET4\Common\Types\Equal.cs">
       <Link>Common\Types\Equal.cs</Link>
+    </Compile>
+    <Compile Include="..\ExchangeLINQ.NET4\Common\Types\Filter.cs">
+      <Link>Common\Types\Filter.cs</Link>
     </Compile>
     <Compile Include="..\ExchangeLINQ.NET4\Common\Types\Id.cs">
       <Link>Common\Types\Id.cs</Link>

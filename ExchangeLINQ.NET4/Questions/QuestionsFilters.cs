@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using ExchangeLINQ.Common;
+using ExchangeLINQ.Common.Types;
 
 namespace ExchangeLINQ.Questions
 {
-	public class FilterIds : Filter<IEnumerable<int>> { }
-
 	public class FilterTags : Filter<IEnumerable<string>> { }
 
 	public class FilterIsRelatedTo : Filter<IEnumerable<int>> { }

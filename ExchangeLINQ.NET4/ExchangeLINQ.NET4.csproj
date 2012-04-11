@@ -57,6 +57,7 @@
     <Compile Include="Answers\AnswersFilteredById.cs" />
     <Compile Include="Answers\AnswersFilteredByQuestionId.cs" />
     <Compile Include="Answers\AnswersFilteredByUserId.cs" />
+    <Compile Include="Answers\AnswersFilters.cs" />
     <Compile Include="Answers\AnswersInterfaces.cs" />
     <Compile Include="Answers\AnswersInterfacesImpl.cs" />
     <Compile Include="Applications\ApplicationsEntry.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Common\State\WrapperProcessorState.cs" />
     <Compile Include="Common\Types\Empty.cs" />
     <Compile Include="Common\Types\Equal.cs" />
+    <Compile Include="Common\Types\Filter.cs" />
     <Compile Include="Common\Types\Id.cs" />
     <Compile Include="Common\Types\In.cs" />
     <Compile Include="Complex\FilteredByFilter.cs" />

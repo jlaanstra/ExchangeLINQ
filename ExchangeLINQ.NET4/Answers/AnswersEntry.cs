@@ -27,19 +27,19 @@ namespace ExchangeLINQ.Answers
 		/// </summary>
 		/// <param name="a">A.</param>
 		/// <returns></returns>
-		public AnswersFilteredById Where(Func<IAnswersIn, IEnumerable<int>> f)
+		public AnswersFilteredById Where(Func<IAnswersIdQuestionPostingUser, FilterIds> f)
 		{
-			return new AnswersFilteredById(oauth, site, f(new AnswersInterfacesImpl()));
+			return new AnswersFilteredById(this.Url, f(new AnswersInterfacesImpl()));
 		}
 
-		public AnswersFilteredByQuestionId Where(Func<IAnswersQuestion, IEnumerable<int>> f)
+		public AnswersFilteredByQuestionId Where(Func<IAnswersIdQuestionPostingUser, FilterQuestionIds> f)
 		{
-			return new AnswersFilteredByQuestionId(oauth, site, f(new AnswersInterfacesImpl()));
+			return new AnswersFilteredByQuestionId(this.Url, f(new AnswersInterfacesImpl()));
 		}
 
-		public AnswersFilteredByUserId Where(Func<IAnswersPostingUser, IEnumerable<int>> f)
+		public AnswersFilteredByUserId Where(Func<IAnswersIdQuestionPostingUser, FilterUserIds> f)
 		{
-			return new AnswersFilteredByUserId(oauth, site, f(new AnswersInterfacesImpl()));
+			return new AnswersFilteredByUserId(this.Url, f(new AnswersInterfacesImpl()));
 		}
 	}
 }

@@ -1,36 +1,15 @@
 ﻿using System.Collections.Generic;
+using ExchangeLINQ.Common;
+using ExchangeLINQ.Common.Types;
 
 namespace ExchangeLINQ.Answers
 {
-	public interface IAnswersIn
+	public interface IAnswersIdQuestionPostingUser
 	{
-		/// <summary>
-		/// Method added to hook into the c# params syntax.
-		/// </summary>
-		/// <param name="tokens">The tokens.</param>
-		/// <returns></returns>
-		IEnumerable<int> In(params int[] ids);
+		IdProp<InCall<FilterQuestionIds, int>> Question { get; }
 
-		/// <summary>
-		/// Specified to enable intellisense in LINQ query.
-		/// </summary>
-		/// <param name="tokens">The tokens.</param>
-		/// <returns></returns>
-		IEnumerable<int> In(IEnumerable<int> ids);
-	}
+		InCall<FilterIds, int> Id { get; }
 
-	public interface IAnswersQuestion
-	{
-		IAnswersId Question { get; }
-	}
-
-	public interface IAnswersId
-	{
-		IAnswersIn Id { get; }
-	}
-
-	public interface IAnswersPostingUser
-	{
-		IAnswersId PostingUser { get; }
+		IdProp<InCall<FilterUserIds, int>> PostingUser { get; }
 	}
 }

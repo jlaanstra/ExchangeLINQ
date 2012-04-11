@@ -6,18 +6,18 @@ namespace ExchangeLINQ.Common.Types
 	/// <summary>
 	/// Generic class which can be used for In call chains in Linq queries.
 	/// </summary>
-	/// <typeparam name="T"></typeparam>
-	/// <typeparam name="U"></typeparam>
-	public class InCall<T, U> where T : Filter<IEnumerable<U>>, new()
+	/// <typeparam name="Filter"></typeparam>
+	/// <typeparam name="ClrType"></typeparam>
+	public class InCall<Filter, ClrType> where Filter : Filter<IEnumerable<ClrType>>, new()
 	{
 		/// <summary>
 		/// Method added to hook into the c# params syntax.
 		/// </summary>
 		/// <param name="tokens">The tokens.</param>
 		/// <returns></returns>
-		public T In(params U[] ids)
+		public Filter In(params ClrType[] ids)
 		{
-			return this.In(ids.AsEnumerable<U>());
+			return this.In(ids.AsEnumerable<ClrType>());
 		}
 
 		/// <summary>
@@ -25,9 +25,9 @@ namespace ExchangeLINQ.Common.Types
 		/// </summary>
 		/// <param name="tokens">The tokens.</param>
 		/// <returns></returns>
-		public T In(IEnumerable<U> ids)
+		public Filter In(IEnumerable<ClrType> ids)
 		{
-			return new T() { Value = ids };
+			return new Filter() { Value = ids };
 		}
 	}
 }

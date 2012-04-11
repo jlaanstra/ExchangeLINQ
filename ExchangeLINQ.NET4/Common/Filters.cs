@@ -1,8 +1,7 @@
-﻿
+﻿using ExchangeLINQ.Common.Types;
+using System.Collections.Generic;
+
 namespace ExchangeLINQ.Common
 {
-	public class Filter<T>
-	{
-		public T Value { get; set; }
-	}
+	public class FilterIds : Filter<IEnumerable<int>> { }
 }

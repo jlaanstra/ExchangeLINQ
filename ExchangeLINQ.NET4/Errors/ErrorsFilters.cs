@@ -1,4 +1,5 @@
 ﻿using ExchangeLINQ.Common;
+using ExchangeLINQ.Common.Types;
 
 namespace ExchangeLINQ.Errors
 {
