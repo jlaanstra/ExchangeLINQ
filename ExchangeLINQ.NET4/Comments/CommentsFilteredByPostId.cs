@@ -3,7 +3,7 @@ using ExchangeLINQ.Common.State;
 using ExchangeLINQ.Context;
 using ExchangeLINQ.Models;
 
-namespace ExchangeLINQ.Answers
+namespace ExchangeLINQ.Comments
 {
 	internal class CommentsFilteredByPostId : ProcessorState<Comment>
 	{
