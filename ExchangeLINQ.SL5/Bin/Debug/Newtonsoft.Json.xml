@@ -143,6 +143,11 @@
             Get or set how <see cref="T:System.DateTime"/> time zones are handling when reading JSON.
             </summary>
         </member>
+        <member name="P:Newtonsoft.Json.JsonReader.MaxDepth">
+            <summary>
+            Gets or sets the maximum depth allowed when reading JSON. Reading past this depth will throw a <see cref="T:Newtonsoft.Json.JsonReaderException"/>.
+            </summary>
+        </member>
         <member name="P:Newtonsoft.Json.JsonReader.TokenType">
             <summary>
             Gets the type of the current JSON token. 
@@ -2355,6 +2360,11 @@
             Gets or sets the culture used when reading JSON. Defaults to <see cref="P:System.Globalization.CultureInfo.InvariantCulture"/>.
             </summary>
         </member>
+        <member name="P:Newtonsoft.Json.JsonSerializer.MaxDepth">
+            <summary>
+            Gets or sets the maximum depth allowed when reading JSON. Reading past this depth will throw a <see cref="T:Newtonsoft.Json.JsonReaderException"/>.
+            </summary>
+        </member>
         <member name="T:Newtonsoft.Json.JsonSerializerSettings">
             <summary>
             Specifies the settings on a <see cref="T:Newtonsoft.Json.JsonSerializer"/> object.
@@ -2455,6 +2465,11 @@
             Gets or sets the <see cref="T:System.Runtime.Serialization.StreamingContext"/> used by the serializer when invoking serialization callback methods.
             </summary>
             <value>The context.</value>
+        </member>
+        <member name="P:Newtonsoft.Json.JsonSerializerSettings.MaxDepth">
+            <summary>
+            Gets or sets the maximum depth allowed when reading JSON. Reading past this depth will throw a <see cref="T:Newtonsoft.Json.JsonReaderException"/>.
+            </summary>
         </member>
         <member name="P:Newtonsoft.Json.JsonSerializerSettings.Formatting">
             <summary>
@@ -5004,12 +5019,20 @@
         </member>
         <member name="F:Newtonsoft.Json.MemberSerialization.OptOut">
             <summary>
-            All members are serialized by default. Members can be excluded using the <see cref="T:Newtonsoft.Json.JsonIgnoreAttribute"/>.
+            All public members are serialized by default. Members can be excluded using <see cref="T:Newtonsoft.Json.JsonIgnoreAttribute"/> or <see cref="!:NonSerializedAttribute"/>.
+            This is the default member serialization mode.
             </summary>
         </member>
         <member name="F:Newtonsoft.Json.MemberSerialization.OptIn">
             <summary>
-            Only members must be marked with the <see cref="T:Newtonsoft.Json.JsonPropertyAttribute"/> are serialized.
+            Only members must be marked with <see cref="T:Newtonsoft.Json.JsonPropertyAttribute"/> or <see cref="T:System.Runtime.Serialization.DataMemberAttribute"/> are serialized.
+            This member serialization mode can also be set by marking the class with <see cref="T:System.Runtime.Serialization.DataContractAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:Newtonsoft.Json.MemberSerialization.Fields">
+            <summary>
+            All public and private fields are serialized. Members can be excluded using <see cref="T:Newtonsoft.Json.JsonIgnoreAttribute"/> or <see cref="!:NonSerializedAttribute"/>.
+            This member serialization mode can also be set by marking the class with <see cref="!:SerializableAttribute"/>.
             </summary>
         </member>
         <member name="T:Newtonsoft.Json.MissingMemberHandling">
@@ -5877,14 +5900,6 @@
             <param name="comparisonType">Type property name string comparison.</param>
             <returns>A matching property if found.</returns>
         </member>
-        <member name="M:Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeDynamic(Newtonsoft.Json.JsonWriter,System.Dynamic.IDynamicMetaObjectProvider,Newtonsoft.Json.Serialization.JsonDynamicContract)">
-            <summary>
-            Serializes the dynamic.
-            </summary>
-            <param name="writer">The writer.</param>
-            <param name="value">The value.</param>
-            <param name="contract">The contract.</param>
-        </member>
         <member name="T:Newtonsoft.Json.Serialization.JsonStringContract">
             <summary>
             Contract details for a <see cref="T:System.Type"/> used by the <see cref="T:Newtonsoft.Json.JsonSerializer"/>.
@@ -5951,14 +5966,14 @@
             Include the .NET type name when serializing into a JSON array structure.
             </summary>
         </member>
-        <member name="F:Newtonsoft.Json.TypeNameHandling.Auto">
-            <summary>
-            Include the .NET type name when the type of the object being serialized is not the same as its declared type.
-            </summary>
-        </member>
         <member name="F:Newtonsoft.Json.TypeNameHandling.All">
             <summary>
             Always include the .NET type name when serializing.
+            </summary>
+        </member>
+        <member name="F:Newtonsoft.Json.TypeNameHandling.Auto">
+            <summary>
+            Include the .NET type name when the type of the object being serialized is not the same as its declared type.
             </summary>
         </member>
         <member name="M:Newtonsoft.Json.Utilities.CollectionUtils.IsNullOrEmpty``1(System.Collections.Generic.ICollection{``0})">
