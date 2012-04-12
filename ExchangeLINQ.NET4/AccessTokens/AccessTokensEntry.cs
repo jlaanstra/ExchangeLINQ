@@ -21,9 +21,9 @@ namespace ExchangeLINQ.AccessTokens
         /// </summary>
         /// <param name="a">A.</param>
         /// <returns></returns>
-        public AccessTokensFilteredByTokens Where(Func<InCall<FilterTokens,string>, FilterTokens> f)
+        public AccessTokensFilteredByTokens Where(Func<InProp<FilterTokens,string>, FilterTokens> f)
         {
-            return new AccessTokensFilteredByTokens(this.Url, f(new InCall<FilterTokens,string>()));
+            return new AccessTokensFilteredByTokens(this.Url, f(new InProp<FilterTokens,string>()));
         }
     }
 }

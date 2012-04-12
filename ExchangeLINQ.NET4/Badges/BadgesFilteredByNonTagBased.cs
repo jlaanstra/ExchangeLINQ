@@ -8,42 +8,33 @@ using System;
 
 namespace ExchangeLINQ.Badges
 {
-	internal class BadgesFilteredById : ProcessorState<Badge>
+	internal class BadgesFilteredByNonTagBased : ProcessorState<Badge>
 	{
-		private FilterIds ids;
-
 		/// <summary>
 		/// Initializes a new instance of the <see cref="BadgesFilteredById"/> class.
 		/// </summary>
 		/// <param name="tokens">The tokens.</param>
-		public BadgesFilteredById(ExchangeUrl url, FilterIds ids)
+		public BadgesFilteredByNonTagBased(ExchangeUrl url)
 		{
 			this.Url = url;
-			this.Url.QueryUrl = string.Format(UrlConstants.BadgesByIdUrl, string.Join(";", ids.Value));
-
-			this.ids = ids;
-		}
-
-		public BadgesFilteredByIdRecent Where(Func<IBadgesRecentlyAwardedPageFromDateFilter, FilterRecent> f)
-		{
-			return new BadgesFilteredByIdRecent(this.Url, ids);
+			this.Url.QueryUrl = UrlConstants.NonTagBasedBadgesUrl;
 		}
 
 		#region Complex
 
-		public FilteredByPage<Answer> Where(Func<IBadgesRecentlyAwardedPageFromDateFilter, FilterPage> f)
+		public FilteredByPage<Answer> Where(Func<IPageFromDateFilter, FilterPage> f)
 		{
 			FilterPage filter = f(new BadgesInterfacesImpl());
 			return new FilteredByPage<Answer>(this.Url, filter);
 		}
 
-		public FilteredByFromDate<Answer> Where(Func<IBadgesRecentlyAwardedPageFromDateFilter, FilterFromDate> f)
+		public FilteredByFromDate<Answer> Where(Func<IPageFromDateFilter, FilterFromDate> f)
 		{
 			FilterFromDate filter = f(new BadgesInterfacesImpl());
 			return new FilteredByFromDate<Answer>(this.Url, filter);
 		}
 
-		public FilteredByFilter<Answer> Where(Func<IBadgesRecentlyAwardedPageFromDateFilter, FilterFilter> f)
+		public FilteredByFilter<Answer> Where(Func<IPageFromDateFilter, FilterFilter> f)
 		{
 			FilterFilter filter = f(new BadgesInterfacesImpl());
 			return new FilteredByFilter<Answer>(this.Url, filter);
@@ -53,13 +44,13 @@ namespace ExchangeLINQ.Badges
 
 		#region OrderBy
 
-		public OrderBy<Answer> OrderBy(Func<IBadgesOrderByNameRankType, FilterOrderBy> f)
+		public OrderBy<Answer> OrderBy(Func<IBadgesOrderByNameRank, FilterOrderBy> f)
 		{
 			FilterOrderBy filter = f(new BadgesInterfacesImpl());
 			return new OrderBy<Answer>(this.Url, filter);
 		}
 
-		public OrderByDescending<Answer> OrderByDescending(Func<IBadgesOrderByNameRankType, FilterOrderBy> f)
+		public OrderByDescending<Answer> OrderByDescending(Func<IBadgesOrderByNameRank, FilterOrderBy> f)
 		{
 			FilterOrderBy filter = f(new BadgesInterfacesImpl());
 			return new OrderByDescending<Answer>(this.Url, filter);

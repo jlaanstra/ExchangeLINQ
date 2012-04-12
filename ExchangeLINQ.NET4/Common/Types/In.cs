@@ -8,7 +8,7 @@ namespace ExchangeLINQ.Common.Types
 	/// </summary>
 	/// <typeparam name="Filter"></typeparam>
 	/// <typeparam name="ClrType"></typeparam>
-	public class InCall<Filter, ClrType> where Filter : Filter<IEnumerable<ClrType>>, new()
+	public class InProp<Filter, ClrType> where Filter : Filter<IEnumerable<ClrType>>, new()
 	{
 		/// <summary>
 		/// Method added to hook into the c# params syntax.

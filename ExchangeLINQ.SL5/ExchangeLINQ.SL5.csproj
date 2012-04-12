@@ -110,6 +110,9 @@
     <Compile Include="..\ExchangeLINQ.NET4\Applications\ApplicationsFilteredByTokensDeauthenticate.cs">
       <Link>Applications\ApplicationsFilteredByTokensDeauthenticate.cs</Link>
     </Compile>
+    <Compile Include="..\ExchangeLINQ.NET4\Applications\ApplicationsFilters.cs">
+      <Link>Applications\ApplicationsFilters.cs</Link>
+    </Compile>
     <Compile Include="..\ExchangeLINQ.NET4\Applications\ApplicationsInterfaces.cs">
       <Link>Applications\ApplicationsInterfaces.cs</Link>
     </Compile>
@@ -130,6 +133,24 @@
     </Compile>
     <Compile Include="..\ExchangeLINQ.NET4\Badges\BadgesFilteredById.cs">
       <Link>Badges\BadgesFilteredById.cs</Link>
+    </Compile>
+    <Compile Include="..\ExchangeLINQ.NET4\Badges\BadgesFilteredByIdRecent.cs">
+      <Link>Badges\BadgesFilteredByIdRecent.cs</Link>
+    </Compile>
+    <Compile Include="..\ExchangeLINQ.NET4\Badges\BadgesFilteredByName.cs">
+      <Link>Badges\BadgesFilteredByName.cs</Link>
+    </Compile>
+    <Compile Include="..\ExchangeLINQ.NET4\Badges\BadgesFilteredByNonTagBased.cs">
+      <Link>Badges\BadgesFilteredByNonTagBased.cs</Link>
+    </Compile>
+    <Compile Include="..\ExchangeLINQ.NET4\Badges\BadgesFilteredByRecent.cs">
+      <Link>Badges\BadgesFilteredByRecent.cs</Link>
+    </Compile>
+    <Compile Include="..\ExchangeLINQ.NET4\Badges\BadgesFilteredByTagBased.cs">
+      <Link>Badges\BadgesFilteredByTagBased.cs</Link>
+    </Compile>
+    <Compile Include="..\ExchangeLINQ.NET4\Badges\BadgesFilters.cs">
+      <Link>Badges\BadgesFilters.cs</Link>
     </Compile>
     <Compile Include="..\ExchangeLINQ.NET4\Badges\BadgesInterfaces.cs">
       <Link>Badges\BadgesInterfaces.cs</Link>
@@ -226,6 +247,12 @@
     </Compile>
     <Compile Include="..\ExchangeLINQ.NET4\Complex\InterfacesImpl.cs">
       <Link>Complex\InterfacesImpl.cs</Link>
+    </Compile>
+    <Compile Include="..\ExchangeLINQ.NET4\Complex\OrderBy.cs">
+      <Link>Complex\OrderBy.cs</Link>
+    </Compile>
+    <Compile Include="..\ExchangeLINQ.NET4\Complex\OrderByDescending.cs">
+      <Link>Complex\OrderByDescending.cs</Link>
     </Compile>
     <Compile Include="..\ExchangeLINQ.NET4\Context\INetworkStackExchangeContext.cs">
       <Link>Context\INetworkStackExchangeContext.cs</Link>
@@ -394,12 +421,6 @@
     </Compile>
     <Compile Include="..\ExchangeLINQ.NET4\Questions\QuestionsInterfacesImpl.cs">
       <Link>Questions\QuestionsInterfacesImpl.cs</Link>
-    </Compile>
-    <Compile Include="..\ExchangeLINQ.NET4\Questions\QuestionsOrderBy.cs">
-      <Link>Questions\QuestionsOrderBy.cs</Link>
-    </Compile>
-    <Compile Include="..\ExchangeLINQ.NET4\Questions\QuestionsOrderByDescending.cs">
-      <Link>Questions\QuestionsOrderByDescending.cs</Link>
     </Compile>
     <Compile Include="..\ExchangeLINQ.NET4\Search\SearchEntry.cs">
       <Link>Search\SearchEntry.cs</Link>

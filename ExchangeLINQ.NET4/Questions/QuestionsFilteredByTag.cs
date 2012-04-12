@@ -49,16 +49,16 @@ namespace ExchangeLINQ.Questions
 
 		#region OrderBy
 
-		public QuestionsOrderBy OrderBy(Func<IQuestionsOrderByActivityCreationScoreHotWeekMonth, FilterOrderBy> f)
+		public OrderBy<Question> OrderBy(Func<IOrderByActivityCreationScoreHotWeekMonth, FilterOrderBy> f)
 		{
 			FilterOrderBy filter = f(new QuestionsInterfacesImpl());
-			return new QuestionsOrderBy(this.Url, filter);
+			return new OrderBy<Question>(this.Url, filter);
 		}
 
-		public QuestionsOrderByDescending OrderByDescending(Func<IQuestionsOrderByActivityCreationScoreHotWeekMonth, FilterOrderBy> f)
+		public OrderByDescending<Question> OrderByDescending(Func<IOrderByActivityCreationScoreHotWeekMonth, FilterOrderBy> f)
 		{
 			FilterOrderBy filter = f(new QuestionsInterfacesImpl());
-			return new QuestionsOrderByDescending(this.Url, filter);
+			return new OrderByDescending<Question>(this.Url, filter);
 		}
 
 		#endregion

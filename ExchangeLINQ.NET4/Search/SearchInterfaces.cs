@@ -4,7 +4,7 @@ namespace ExchangeLINQ.Search
 {
 	public interface ISearchTaggedInTitle
 	{
-		InCall<FilterTags, string> Tags { get; }
+		InProp<FilterTags, string> Tags { get; }
 
 		Equal<FilterTitle, string> Title { get; }
 	}

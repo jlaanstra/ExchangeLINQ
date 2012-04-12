@@ -6,11 +6,11 @@ namespace ExchangeLINQ.Questions
 {	
 	public interface IQuestionIdTagsLinksToIsRelatedToPostingUserIsFeaturedIsUnansweredHasNoAnswersPageFromDateFilter : IPageFromDateFilter
 	{
-		InCall<FilterIds, int> Id { get; }
+		InProp<FilterIds, int> Id { get; }
 
-		InCall<FilterTags, string> Tags { get; }
+		InProp<FilterTags, string> Tags { get; }
 
-		InCall<FilterIsRelatedTo, int> IsRelatedTo { get; }
+		InProp<FilterIsRelatedTo, int> IsRelatedTo { get; }
 
 		IdProp<Equal<FilterLinksToId, int>> LinksTo { get; }
 
@@ -25,25 +25,18 @@ namespace ExchangeLINQ.Questions
 
 	public interface IQuestionTagsPageFromDateFilter : IPageFromDateFilter
 	{
-		InCall<FilterTags, string> Tags { get; }
+		InProp<FilterTags, string> Tags { get; }
 	}
 
-	public interface IQuestionsOrderByActivityCreationScoreHotWeekMonth : IQuestionsOrderByActivityCreationScore
+	public interface IOrderByActivityCreationScoreHotWeekMonth : IOrderByActivityCreationScore
 	{
 		FilterOrderBy Hot { get; }
 		FilterOrderBy Week { get; }
 		FilterOrderBy Month { get; }
 	}
 
-	public interface IQuestionsOrderByActivityCreationScoreRank : IQuestionsOrderByActivityCreationScore
+	public interface IOrderByActivityCreationScoreRank : IOrderByActivityCreationScore
 	{
 		FilterOrderBy Rank { get; }
-	}
-
-	public interface IQuestionsOrderByActivityCreationScore
-	{
-		FilterOrderBy Activity { get; }
-		FilterOrderBy Creation { get; }
-		FilterOrderBy Score { get; }
-	}
+	}	
 }

@@ -1,21 +1,36 @@
 ﻿using System.Collections.Generic;
+using ExchangeLINQ.Complex;
+using ExchangeLINQ.Common.Types;
+using ExchangeLINQ.Common;
 
 namespace ExchangeLINQ.Badges
 {
-    public interface IBadgesIn
-    {
-        /// <summary>
-        /// Method added to hook into the c# params syntax.
-        /// </summary>
-        /// <param name="tokens">The tokens.</param>
-        /// <returns></returns>
-        IEnumerable<int> In(params int[] ids);
+	public interface IBadgesNameIdsNonTagBasedRecentlyAwardedTagBasedPageFromDateFilter : IPageFromDateFilter
+	{
+		Equal<FilterName, string> Name { get; }
 
-        /// <summary>
-        /// Specified to enable intellisense in LINQ query.
-        /// </summary>
-        /// <param name="tokens">The tokens.</param>
-        /// <returns></returns>
-        IEnumerable<int> In(IEnumerable<int> ids);
-    }
+		InProp<FilterIds, int> Id { get; }
+
+		FilterNonTagBased NonTagBased { get; }
+
+		FilterTagBased TagBased { get; }
+
+		FilterRecent IsRecentlyAwarded { get; }
+	}
+
+	public interface IBadgesRecentlyAwardedPageFromDateFilter : IPageFromDateFilter
+	{
+		FilterRecent IsRecentlyAwarded { get; }
+	}
+
+	public interface IBadgesOrderByNameRank
+	{
+		FilterOrderBy Name { get; }
+		FilterOrderBy Rank { get; }
+	}
+
+	public interface IBadgesOrderByNameRankType : IBadgesOrderByNameRank
+	{
+		FilterOrderBy Type { get; }
+	}
 }

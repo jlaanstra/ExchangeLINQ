@@ -1,5 +1,6 @@
 ﻿using System;
 using ExchangeLINQ.Common.Types;
+using ExchangeLINQ.Common;
 
 namespace ExchangeLINQ.Complex
 {
@@ -36,5 +37,12 @@ namespace ExchangeLINQ.Complex
 	public interface IFilter
 	{
 		Equal<FilterFilter, string> Filter { get; }
+	}
+
+	public interface IOrderByActivityCreationScore
+	{
+		FilterOrderBy Activity { get; }
+		FilterOrderBy Creation { get; }
+		FilterOrderBy Score { get; }
 	}
 }

@@ -9,7 +9,7 @@ namespace ExchangeLINQ.Search
 	public class SearchOrderBy : ProcessorState<Question>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="QuestionsOrderBy"/> class.
+		/// Initializes a new instance of the <see cref="OrderBy<Question>"/> class.
 		/// </summary>
 		/// <param name="url">The URL.</param>
 		/// <param name="orderby">The orderby.</param>

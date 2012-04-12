@@ -4,7 +4,7 @@ namespace ExchangeLINQ.Search
 {
 	public class SearchInterfacesImpl : ISearchTaggedInTitle, ISearchOrderByActivityCreationScoreRelevance
 	{
-		public InCall<FilterTags, string> Tags { get { return new InCall<FilterTags, string>(); } }
+		public InProp<FilterTags, string> Tags { get { return new InProp<FilterTags, string>(); } }
 
 		public Equal<FilterTitle, string> Title { get { return new Equal<FilterTitle, string>(); } }
 

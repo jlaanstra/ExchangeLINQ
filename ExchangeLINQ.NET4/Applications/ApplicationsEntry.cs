@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using ExchangeLINQ.Common;
 using ExchangeLINQ.Common.State;
+using ExchangeLINQ.AccessTokens;
 
 namespace ExchangeLINQ.Applications
 {
@@ -21,9 +22,9 @@ namespace ExchangeLINQ.Applications
 		/// </summary>
 		/// <param name="tokenSelector">The ids.</param>
 		/// <returns></returns>
-		public ApplicationsFilteredByTokens Where(Func<IApplicationsToken, IEnumerable<string>> tokenSelector)
+		public ApplicationsFilteredByTokens Where(Func<IApplicationsToken, FilterTokens> f)
 		{
-			return new ApplicationsFilteredByTokens(this.Url, tokenSelector(new ApplicationsInterfacesImpl()));
+			return new ApplicationsFilteredByTokens(this.Url, f(new ApplicationsInterfacesImpl()));
 		}
 	}
 }

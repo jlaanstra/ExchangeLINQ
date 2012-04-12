@@ -6,8 +6,8 @@ using ExchangeLINQ.Common;
 namespace ExchangeLINQ.Questions
 {
 	internal class QuestionsInterfacesImpl : IQuestionIdTagsLinksToIsRelatedToPostingUserIsFeaturedIsUnansweredHasNoAnswersPageFromDateFilter,
-		IQuestionTagsPageFromDateFilter, IQuestionsOrderByActivityCreationScoreHotWeekMonth, IQuestionsOrderByActivityCreationScore, 
-		IQuestionsOrderByActivityCreationScoreRank
+		IQuestionTagsPageFromDateFilter, IOrderByActivityCreationScoreHotWeekMonth, IOrderByActivityCreationScore, 
+		IOrderByActivityCreationScoreRank
 	{
 		public FilterOrderBy Activity { get { return new FilterOrderBy() { Value = "activity" }; } }
 
@@ -25,11 +25,11 @@ namespace ExchangeLINQ.Questions
 
 		#region IQuestionIdTagsLinksToIsRelatedToPostingUserIsFeaturedIsUnansweredHasNoAnswersPageFromDate
 
-		public InCall<FilterIds, int> Id { get { return new InCall<FilterIds, int>(); } }
+		public InProp<FilterIds, int> Id { get { return new InProp<FilterIds, int>(); } }
 
-		public InCall<FilterTags, string> Tags { get { return new InCall<FilterTags,string>(); } }
+		public InProp<FilterTags, string> Tags { get { return new InProp<FilterTags,string>(); } }
 
-		public InCall<FilterIsRelatedTo, int> IsRelatedTo { get { return new InCall<FilterIsRelatedTo,int>(); } }
+		public InProp<FilterIsRelatedTo, int> IsRelatedTo { get { return new InProp<FilterIsRelatedTo,int>(); } }
 
 		public IdProp<Equal<FilterLinksToId, int>> LinksTo { get { return new IdProp<Equal<FilterLinksToId, int>>(); } }
 

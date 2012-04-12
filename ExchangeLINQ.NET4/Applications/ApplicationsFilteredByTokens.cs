@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using ExchangeLINQ.Common;
 using ExchangeLINQ.Common.State;
+using ExchangeLINQ.AccessTokens;
 
 namespace ExchangeLINQ.Applications
 {
 	public class ApplicationsFilteredByTokens : State
 	{
-		private IEnumerable<string> tokens;
+		private FilterTokens tokens;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="SEApplicationsFilteredByTokens"/> class.
 		/// </summary>
 		/// <param name="tokens">The tokens.</param>
-		internal ApplicationsFilteredByTokens(ExchangeUrl url,IEnumerable<string> tokens)
+		internal ApplicationsFilteredByTokens(ExchangeUrl url, FilterTokens tokens)
 		{
 			this.Url = url;
 			this.tokens = tokens;
@@ -24,7 +25,7 @@ namespace ExchangeLINQ.Applications
 		/// </summary>
 		/// <param name="tokenSelector">The ids.</param>
 		/// <returns></returns>
-		public ApplicationsFilteredByTokensDeauthenticate Where(Action<IApplicationsDeauthenticate> tokenSelector)
+		public ApplicationsFilteredByTokensDeauthenticate Where(Func<IApplicationsDeauthenticate, FilterDeauthenticate> f)
 		{
 			return new ApplicationsFilteredByTokensDeauthenticate(this.Url, this.tokens);
 		}

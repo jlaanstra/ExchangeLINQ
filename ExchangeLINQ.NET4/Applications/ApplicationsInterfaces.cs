@@ -1,21 +1,15 @@
 ﻿using System.Collections.Generic;
+using ExchangeLINQ.Common.Types;
 
 namespace ExchangeLINQ.Applications
 {
     public interface IApplicationsDeauthenticate
     {
-        void Deauthenticate();
+        FilterDeauthenticate Deauthenticate { get; }
     }
 
     public interface IApplicationsToken
     {
-        IApplicationsIn Token { get; }
-    }
-
-    public interface IApplicationsIn
-    {
-        IEnumerable<string> In(params string[] tokens);
-
-        IEnumerable<string> In(IEnumerable<string> tokens);
+        InProp<FilterTokens, string> Token { get; }
     }
 }

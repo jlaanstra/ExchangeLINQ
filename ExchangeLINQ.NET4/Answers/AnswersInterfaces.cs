@@ -1,15 +1,16 @@
 ﻿using System.Collections.Generic;
 using ExchangeLINQ.Common;
 using ExchangeLINQ.Common.Types;
+using ExchangeLINQ.Complex;
 
 namespace ExchangeLINQ.Answers
 {
-	public interface IAnswersIdQuestionPostingUser
+	public interface IAnswersIdQuestionPostingUserPageFromDateFilter : IPageFromDateFilter
 	{
-		IdProp<InCall<FilterQuestionIds, int>> Question { get; }
+		IdProp<InProp<FilterQuestionIds, int>> Question { get; }
 
-		InCall<FilterIds, int> Id { get; }
+		InProp<FilterIds, int> Id { get; }
 
-		IdProp<InCall<FilterUserIds, int>> PostingUser { get; }
+		IdProp<InProp<FilterUserIds, int>> PostingUser { get; }
 	}
 }

@@ -10,8 +10,6 @@ namespace ExchangeLINQ.Questions
 
 	public class FilterUserId : Filter<IEnumerable<int>> { }
 
-	public class FilterOrderBy : Filter<string> { }
-
 	public class FilterLinksToId : Filter<int> { }
 
 	public class FilterPostingUserId : Filter<int> { }

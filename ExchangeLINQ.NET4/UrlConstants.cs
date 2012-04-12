@@ -9,7 +9,7 @@ namespace ExchangeLINQ
 		public const string CommentsByAnswerIdUrl =						"/answers/{0}/comments";
 		public const string BadgesUrl =									"/badges";
 		public const string BadgesByIdUrl =								"/badges/{0}";
-		public const string BadgesByNameUrl =							"/badges/name";
+		public const string NonTagBasedBadgesUrl =						"/badges/name";
 		public const string BadgesRecipientsUrl =						"/badges/recipients";
 		public const string RecipientsByBadgeIdUrl =					"/badges/{0}/recipients";
 		public const string TagBasedBadgesUrl =							"/badges/tags";

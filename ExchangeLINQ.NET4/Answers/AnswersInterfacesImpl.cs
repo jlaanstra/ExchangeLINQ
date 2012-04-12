@@ -3,24 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using ExchangeLINQ.Common.Types;
 using ExchangeLINQ.Common;
+using ExchangeLINQ.Complex;
 
 namespace ExchangeLINQ.Answers
 {
-	internal class AnswersInterfacesImpl : IAnswersIdQuestionPostingUser
+	internal class AnswersInterfacesImpl : IAnswersIdQuestionPostingUserPageFromDateFilter
 	{
-		public IdProp<InCall<FilterQuestionIds, int>> Question
+		public IdProp<InProp<FilterQuestionIds, int>> Question { get { return new IdProp<InProp<FilterQuestionIds, int>>(); } }
+
+		public InProp<FilterIds, int> Id { get { return new InProp<FilterIds, int>(); } }
+
+		public IdProp<InProp<FilterUserIds, int>> PostingUser { get { return new IdProp<InProp<FilterUserIds, int>>(); } }
+
+		public Equal<FilterPage, int> Page
 		{
-			get { return new IdProp<InCall<FilterQuestionIds, int>>(); }
+			get { return new Equal<FilterPage, int>(); }
 		}
 
-		public InCall<FilterIds, int> Id
+		public Equal<FilterFromDate, DateTime> FromDate
 		{
-			get { return new InCall<FilterIds, int>(); }
+			get { return new Equal<FilterFromDate, DateTime>(); }
 		}
 
-		public IdProp<InCall<FilterUserIds, int>> PostingUser
+		public Equal<FilterFilter, string> Filter
 		{
-			get { return new IdProp<InCall<FilterUserIds, int>>(); }
+			get { return new Equal<FilterFilter, string>(); }
 		}
 	}
 }

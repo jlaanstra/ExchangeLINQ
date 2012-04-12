@@ -63,6 +63,7 @@
     <Compile Include="Applications\ApplicationsEntry.cs" />
     <Compile Include="Applications\ApplicationsFilteredByTokens.cs" />
     <Compile Include="Applications\ApplicationsFilteredByTokensDeauthenticate.cs" />
+    <Compile Include="Applications\ApplicationsFilters.cs" />
     <Compile Include="Applications\ApplicationsInterfaces.cs" />
     <Compile Include="Applications\ApplicationsInterfacesImpl.cs" />
     <Compile Include="AssociatedUsers\AssociatedUsersEntry.cs" />
@@ -70,8 +71,14 @@
     <Compile Include="AssociatedUsers\AssociatedUsersFilters.cs" />
     <Compile Include="Badges\BadgesEntry.cs" />
     <Compile Include="Badges\BadgesFilteredById.cs" />
+    <Compile Include="Badges\BadgesFilters.cs" />
     <Compile Include="Badges\BadgesInterfaces.cs" />
     <Compile Include="Badges\BadgesInterfacesImpl.cs" />
+    <Compile Include="Badges\BadgesFilteredByName.cs" />
+    <Compile Include="Badges\BadgesFilteredByNonTagBased.cs" />
+    <Compile Include="Badges\BadgesFilteredByTagBased.cs" />
+    <Compile Include="Badges\BadgesFilteredByRecent.cs" />
+    <Compile Include="Badges\BadgesFilteredByIdRecent.cs" />
     <Compile Include="Comments\CommentsEntry.cs" />
     <Compile Include="Comments\CommentsFilteredById.cs" />
     <Compile Include="Comments\CommentsFilteredByPostId.cs" />
@@ -94,6 +101,7 @@
     <Compile Include="Common\Types\Filter.cs" />
     <Compile Include="Common\Types\Id.cs" />
     <Compile Include="Common\Types\In.cs" />
+    <Compile Include="Complex\OrderByDescending.cs" />
     <Compile Include="Complex\FilteredByFilter.cs" />
     <Compile Include="Complex\FilteredByFromDate.cs" />
     <Compile Include="Complex\FilteredByFromDateToDate.cs" />
@@ -102,6 +110,7 @@
     <Compile Include="Complex\Filters.cs" />
     <Compile Include="Complex\Interfaces.cs" />
     <Compile Include="Complex\InterfacesImpl.cs" />
+    <Compile Include="Complex\OrderBy.cs" />
     <Compile Include="Context\INetworkStackExchangeContext.cs" />
     <Compile Include="Context\IOAuth.cs" />
     <Compile Include="Context\ISite.cs" />
@@ -159,8 +168,6 @@
     <Compile Include="Questions\QuestionsFilters.cs" />
     <Compile Include="Questions\QuestionsInterfaces.cs" />
     <Compile Include="Questions\QuestionsInterfacesImpl.cs" />
-    <Compile Include="Questions\QuestionsOrderBy.cs" />
-    <Compile Include="Questions\QuestionsOrderByDescending.cs" />
     <Compile Include="Search\SearchEntry.cs" />
     <Compile Include="Search\SearchFilteredByInTitle.cs" />
     <Compile Include="Search\SearchFilteredByTagged.cs" />

@@ -1,34 +1,68 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ExchangeLINQ.Common.Types;
+using ExchangeLINQ.Common;
+using ExchangeLINQ.Complex;
 
 namespace ExchangeLINQ.Badges
 {
-	internal class BadgesInterfacesImpl : IBadgesIn
+	internal class BadgesInterfacesImpl : IBadgesNameIdsNonTagBasedRecentlyAwardedTagBasedPageFromDateFilter, IBadgesOrderByNameRankType, IBadgesOrderByNameRank,
+		IBadgesRecentlyAwardedPageFromDateFilter
 	{
-		/// <summary>
-		/// Method added to hook into the c# params syntax.
-		/// </summary>
-		/// <param name="ids">The tokens.</param>
-		/// <returns></returns>
-		public IEnumerable<int> In(params int[] ids)
+		public Equal<FilterName, string> Name
 		{
-			return this.In(ids.AsEnumerable<int>());
+			get { return new Equal<FilterName, string>(); }
 		}
 
-		/// <summary>
-		/// Specified to enable intellisense in LINQ query.
-		/// </summary>
-		/// <param name="ids">The tokens.</param>
-		/// <returns></returns>
-		public IEnumerable<int> In(IEnumerable<int> ids)
+		public InProp<FilterIds, int> Id
 		{
-			//limit to 20 according to http://api.stackexchange.com/docs/read-access-tokens
-			if (ids.Count() > 100)
-			{
-				throw new InvalidOperationException("You can only specify up to 100 ids.");
-			}
-			return ids;
+			get { return new InProp<FilterIds, int>(); }
 		}
+
+		public FilterNonTagBased NonTagBased
+		{
+			get { return new FilterNonTagBased(); }
+		}
+
+		public FilterTagBased TagBased
+		{
+			get { return new FilterTagBased(); }
+		}
+
+		public FilterRecent IsRecentlyAwarded
+		{
+			get { return new FilterRecent(); }
+		}
+
+		public Equal<FilterPage, int> Page
+		{
+			get { return new Equal<FilterPage, int>(); }
+		}
+
+		public Equal<FilterFromDate, DateTime> FromDate
+		{
+			get { return new Equal<FilterFromDate, DateTime>(); }
+		}
+
+		public Equal<FilterFilter, string> Filter
+		{
+			get { return new Equal<FilterFilter, string>(); }
+		}
+
+		FilterOrderBy IBadgesOrderByNameRank.Name
+		{
+			get { return new FilterOrderBy() { Value = "name" }; }
+		}
+
+		public FilterOrderBy Rank
+		{
+			get { return new FilterOrderBy() { Value = "rank" }; }
+		}
+
+		public FilterOrderBy Type
+		{
+			get { return new FilterOrderBy() { Value = "type" }; }
+		}		
 	}
 }

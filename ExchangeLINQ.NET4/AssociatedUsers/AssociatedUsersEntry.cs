@@ -3,6 +3,7 @@ using ExchangeLINQ.Common;
 using ExchangeLINQ.Common.State;
 using ExchangeLINQ.Common.Types;
 using ExchangeLINQ.Models;
+using ExchangeLINQ.Complex;
 
 namespace ExchangeLINQ.AssociatedUsers
 {
@@ -23,9 +24,15 @@ namespace ExchangeLINQ.AssociatedUsers
 		/// </summary>
 		/// <param name="f">The f.</param>
 		/// <returns></returns>
-		public AssociatedUsersFilteredById Where(Func<IdProp<InCall<FilterUserIds,int>>, FilterUserIds> f)
+		public AssociatedUsersFilteredById Where(Func<IdProp<InProp<FilterUserIds,int>>, FilterUserIds> f)
 		{
-			return new AssociatedUsersFilteredById(this.Url, f(new IdProp<InCall<FilterUserIds,int>>()));
+			return new AssociatedUsersFilteredById(this.Url, f(new IdProp<InProp<FilterUserIds,int>>()));
+		}
+
+		public FilteredByPage<AccessToken> Where(Func<IPage, FilterPage> f)
+		{
+			FilterPage filter = f(new InterfacesImpl());
+			return new FilteredByPage<AccessToken>(this.Url, filter);
 		}
 	}
 }
