@@ -29,6 +29,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\bin\Release\ExchangeLINQ.NET4.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -71,6 +72,8 @@
     <Compile Include="AssociatedUsers\AssociatedUsersFilteredByMe.cs" />
     <Compile Include="AssociatedUsers\AssociatedUsersFilteredByUserId.cs" />
     <Compile Include="AssociatedUsers\AssociatedUsersFilters.cs" />
+    <Compile Include="AssociatedUsers\AssociatedUsersInterfaces.cs" />
+    <Compile Include="AssociatedUsers\AssociatedUsersInterfacesImpl.cs" />
     <Compile Include="Badges\BadgesEntry.cs" />
     <Compile Include="Badges\BadgesFilteredById.cs" />
     <Compile Include="Badges\BadgesFilters.cs" />

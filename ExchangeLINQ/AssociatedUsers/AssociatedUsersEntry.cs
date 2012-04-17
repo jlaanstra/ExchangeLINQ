@@ -24,9 +24,9 @@ namespace ExchangeLINQ.AssociatedUsers
 		/// </summary>
 		/// <param name="f">The f.</param>
 		/// <returns></returns>
-		public AssociatedUsersFilteredByUserId Where(Func<IdProp<InProp<FilterUserIds,int>>, FilterUserIds> f)
+		public AssociatedUsersFilteredByUserId Where(Func<IAssociatedUsersUserPage, FilterUserIds> f)
 		{
-			return new AssociatedUsersFilteredByUserId(this.Url, f(new IdProp<InProp<FilterUserIds,int>>()));
+			return new AssociatedUsersFilteredByUserId(this.Url, f(new AssociatedUsersInterfacesImpl()));
 		}
 
 		/// <summary>
@@ -34,14 +34,14 @@ namespace ExchangeLINQ.AssociatedUsers
 		/// </summary>
 		/// <param name="f">The f.</param>
 		/// <returns></returns>
-		public AssociatedUsersFilteredByMe Where(Func<IdProp<InProp<FilterUserIds, int>>, FilterMe> f)
+		public AssociatedUsersFilteredByMe Where(Func<IAssociatedUsersUserPage, FilterMe> f)
 		{
 			return new AssociatedUsersFilteredByMe(this.Url);
 		}
 
-		public FilteredByPage<AccessToken> Where(Func<IPage, FilterPage> f)
+		public FilteredByPage<AccessToken> Where(Func<IAssociatedUsersUserPage, FilterPage> f)
 		{
-			FilterPage filter = f(new InterfacesImpl());
+			FilterPage filter = f(new AssociatedUsersInterfacesImpl());
 			return new FilteredByPage<AccessToken>(this.Url, filter);
 		}
 	}

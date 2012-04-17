@@ -44,6 +44,7 @@
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\Bin\Release\ExchangeLINQ.SL4.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -83,6 +84,8 @@
     <Compile Include="AssociatedUsers\AssociatedUsersFilteredByMe.cs" />
     <Compile Include="AssociatedUsers\AssociatedUsersFilteredByUserId.cs" />
     <Compile Include="AssociatedUsers\AssociatedUsersFilters.cs" />
+    <Compile Include="AssociatedUsers\AssociatedUsersInterfaces.cs" />
+    <Compile Include="AssociatedUsers\AssociatedUsersInterfacesImpl.cs" />
     <Compile Include="Badges\BadgesEntry.cs" />
     <Compile Include="Badges\BadgesFilteredById.cs" />
     <Compile Include="Badges\BadgesFilters.cs" />
