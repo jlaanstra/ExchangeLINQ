@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeLINQ.SL4", "ExchangeLINQ.SL4\ExchangeLINQ.SL4.csproj", "{DDCF4944-0DED-404E-B678-D0B115D1B3DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeLINQ.SL4", "ExchangeLINQ\ExchangeLINQ.SL4.csproj", "{DDCF4944-0DED-404E-B678-D0B115D1B3DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
