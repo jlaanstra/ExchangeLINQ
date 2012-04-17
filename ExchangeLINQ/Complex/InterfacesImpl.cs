@@ -4,7 +4,7 @@ using ExchangeLINQ.Common;
 
 namespace ExchangeLINQ.Complex
 {
-	public class InterfacesImpl : IPage, IPageSizeFilter, IPageFromDateFilter, IToDateFilter, IFilter, IPageFilter, IOrderByActivityCreationScore
+	public class InterfacesImpl : IPage, IPageSizeFilter, IPageFromDateFilter, IToDateFilter, IFilter, IPageFilter, IOrderByActivityCreationScore, IOrderByCreationScore
 	{
 		public Equal<FilterPage, int> Page { get { return new Equal<FilterPage, int>(); } }
 

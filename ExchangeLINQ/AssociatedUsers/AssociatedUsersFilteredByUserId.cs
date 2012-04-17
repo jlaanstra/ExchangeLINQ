@@ -6,14 +6,14 @@ using System;
 
 namespace ExchangeLINQ.AssociatedUsers
 {
-	public class AssociatedUsersFilteredById : ProcessorState<NetworkUser>
+	public class AssociatedUsersFilteredByUserId : ProcessorState<NetworkUser>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="AssociatedUsersFilteredById"/> class.
+		/// Initializes a new instance of the <see cref="AssociatedUsersFilteredByUserId"/> class.
 		/// </summary>
 		/// <param name="oauth">The oauth.</param>
 		/// <param name="ids">The ids.</param>
-		internal AssociatedUsersFilteredById(ExchangeUrl url, FilterUserIds ids)
+		internal AssociatedUsersFilteredByUserId(ExchangeUrl url, FilterUserIds ids)
 		{
 			this.Url = url;
 			this.Url.QueryUrl = string.Format(UrlConstants.AssociatedUsersByIdUrl, ids.Value);

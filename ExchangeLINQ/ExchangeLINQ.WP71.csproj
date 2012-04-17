@@ -77,8 +77,9 @@
     <Compile Include="Applications\ApplicationsInterfaces.cs" />
     <Compile Include="Applications\ApplicationsInterfacesImpl.cs" />
     <Compile Include="AssociatedUsers\AssociatedUsersEntry.cs" />
-    <Compile Include="AssociatedUsers\AssociatedUsersFilteredById.cs" />
+    <Compile Include="AssociatedUsers\AssociatedUsersFilteredByUserId.cs" />
     <Compile Include="AssociatedUsers\AssociatedUsersFilters.cs" />
+    <Compile Include="AssociatedUsers\AssociatedUsersFilteredByMe.cs" />
     <Compile Include="Badges\BadgesEntry.cs" />
     <Compile Include="Badges\BadgesFilteredById.cs" />
     <Compile Include="Badges\BadgesFilters.cs" />
@@ -95,8 +96,12 @@
     <Compile Include="Comments\CommentsFilteredByQuestionId.cs" />
     <Compile Include="Comments\CommentsFilteredByUserId.cs" />
     <Compile Include="Comments\CommentsFilteredByUserIdReplyTo.cs" />
+    <Compile Include="Comments\CommentsFilters.cs" />
     <Compile Include="Comments\CommentsInterfaces.cs" />
     <Compile Include="Comments\CommentsInterfacesImpl.cs" />
+    <Compile Include="Comments\CommentsFilteredByMe.cs" />
+    <Compile Include="Comments\CommentsFilteredByMeReplyTo.cs" />
+    <Compile Include="Comments\CommentsFilteredByAnswerId.cs" />
     <Compile Include="Common\DateTimeExtensions.cs" />
     <Compile Include="Common\ExchangeUrl.cs" />
     <Compile Include="Common\Filters.cs" />
@@ -111,6 +116,7 @@
     <Compile Include="Common\Types\Filter.cs" />
     <Compile Include="Common\Types\Id.cs" />
     <Compile Include="Common\Types\In.cs" />
+    <Compile Include="Common\Types\User.cs" />
     <Compile Include="Complex\OrderByDescending.cs" />
     <Compile Include="Complex\FilteredByFilter.cs" />
     <Compile Include="Complex\FilteredByFromDate.cs" />

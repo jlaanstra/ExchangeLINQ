@@ -3,30 +3,30 @@ using System.Collections.Generic;
 using ExchangeLINQ.Common.State;
 using ExchangeLINQ.Context;
 using ExchangeLINQ.Models;
+using ExchangeLINQ.Common;
 
 namespace ExchangeLINQ.Comments
 {
 	internal class CommentsFilteredByUserId : ProcessorState<Answer>
 	{
-		private IEnumerable<int> ids;
-		private string queryUrl = "/2.0/users/{ids}/comments";
-		private IOAuth oauth;
-		private ISite site;
+		private FilterUserIds ids;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="AccessTokensFilteredByTokens"/> class.
+		/// Initializes a new instance of the <see cref="CommentsFilteredById"/> class.
 		/// </summary>
-		/// <param name="tokens">The tokens.</param>
-		public CommentsFilteredByUserId(IOAuth oauth, ISite site, IEnumerable<int> ids)
+		/// <param name="url">The URL.</param>
+		/// <param name="ids">The ids.</param>
+		internal CommentsFilteredByUserId(ExchangeUrl url, FilterUserIds ids)
 		{
-			this.oauth = oauth;
-			this.site = site;
+			this.Url = url;
+			this.Url.QueryUrl = string.Format(UrlConstants.CommentsByUserIdUrl, string.Join(";", ids.Value));
+
 			this.ids = ids;
 		}
 
-		public CommentsFilteredByUserIdReplyTo Where(Func<ICommentsReplyToUser, int> f)
+		public CommentsFilteredByUserIdReplyTo Where(Func<ICommentsReplyToUserPageFromDateFilter, FilterToId> f)
 		{
-			return new CommentsFilteredByUserIdReplyTo(oauth, site, ids, f(new CommentsInterfacesImpl()));
+			return new CommentsFilteredByUserIdReplyTo(this.Url, ids, f(new CommentsInterfacesImpl()));
 		}
 	}
 }

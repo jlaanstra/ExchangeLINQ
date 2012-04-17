@@ -1,31 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ExchangeLINQ.Common.Types;
+using ExchangeLINQ.Complex;
+using ExchangeLINQ.Common;
 
 namespace ExchangeLINQ.Comments
 {
-	public class CommentsInterfacesImpl : ICommentsId, ICommentsIn, ICommentsQuestion, ICommentsPostingUser, ICommentsReplyToUser
+	public class CommentsInterfacesImpl : ICommentsIdPostIdQuestionIdAnswerIdUserIdMePageFromDateFilter,
+		ICommentsReplyToUserPageFromDateFilter
 	{
-		public ICommentsIn Id { get { return this; } }
+		public InProp<FilterIds, int> Id { get { return new InProp<FilterIds, int>(); } }
 
-		public IEnumerable<int> In(params int[] ids)
-		{
-			return In(ids.AsEnumerable());
-		}
+		public IdProp<InProp<FilterPostIds, int>> Post { get { return new IdProp<InProp<FilterPostIds, int>>(); } }
 
-		public IEnumerable<int> In(IEnumerable<int> ids)
-		{
-			if (ids.Count() > 100)
-			{
-				throw new InvalidOperationException("You can only specify up to 100 ids.");
-			}
-			return ids;
-		}
+		public IdProp<InProp<FilterQuestionIds, int>> Question { get { return new IdProp<InProp<FilterQuestionIds, int>>(); } }
 
-		public ICommentsId Question { get { return this; } }
+		public IdProp<InProp<FilterAnswerIds, int>> Answer { get { return new IdProp<InProp<FilterAnswerIds, int>>(); } }
 
-		public ICommentsId PostingUser { get { return this; } }
+		public UserProp<InProp<FilterUserIds, int>> User { get { return new UserProp<InProp<FilterUserIds, int>>(); } }
 
-		public ICommentsId ReplyToUser { get { return this; } }
+		public Equal<FilterPage, int> Page { get { return new Equal<FilterPage, int>(); } }
+
+		public Equal<FilterFromDate, DateTime> FromDate { get { return new Equal<FilterFromDate, DateTime>(); } }
+
+		public Equal<FilterFilter, string> Filter { get { return new Equal<FilterFilter, string>(); } }
+
+		public IdProp<FilterId> ReplyToUser { get { return new IdProp<FilterId>(); } }
 	}
 }

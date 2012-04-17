@@ -7,7 +7,7 @@ using ExchangeLINQ.Complex;
 
 namespace ExchangeLINQ.AssociatedUsers
 {
-	public class AssociatedUsersEntry : ProcessorState<NetworkUser>
+	public class AssociatedUsersEntry : State
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AssociatedUsersEntry"/> class.
@@ -24,9 +24,19 @@ namespace ExchangeLINQ.AssociatedUsers
 		/// </summary>
 		/// <param name="f">The f.</param>
 		/// <returns></returns>
-		public AssociatedUsersFilteredById Where(Func<IdProp<InProp<FilterUserIds,int>>, FilterUserIds> f)
+		public AssociatedUsersFilteredByUserId Where(Func<IdProp<InProp<FilterUserIds,int>>, FilterUserIds> f)
 		{
-			return new AssociatedUsersFilteredById(this.Url, f(new IdProp<InProp<FilterUserIds,int>>()));
+			return new AssociatedUsersFilteredByUserId(this.Url, f(new IdProp<InProp<FilterUserIds,int>>()));
+		}
+
+		/// <summary>
+		/// Implements the Where query pattern.
+		/// </summary>
+		/// <param name="f">The f.</param>
+		/// <returns></returns>
+		public AssociatedUsersFilteredByMe Where(Func<IdProp<InProp<FilterUserIds, int>>, FilterMe> f)
+		{
+			return new AssociatedUsersFilteredByMe(this.Url);
 		}
 
 		public FilteredByPage<AccessToken> Where(Func<IPage, FilterPage> f)

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using ExchangeLINQ.Common.State;
 using ExchangeLINQ.Context;
 using ExchangeLINQ.Models;
+using ExchangeLINQ.Common;
+using ExchangeLINQ.Complex;
 
 namespace ExchangeLINQ.Comments
 {
@@ -16,25 +18,76 @@ namespace ExchangeLINQ.Comments
 		/// Initializes a new instance of the <see cref="AccessTokensEntry"/> class.
 		/// </summary>
 		/// <param name="oauth">The oauth.</param>
-		public CommentsEntry(IOAuth oauth, ISite site)
+		public CommentsEntry(ExchangeUrl url)
 		{
-			this.oauth = oauth;
-			this.site = site;
+			this.Url = url;
 		}
 
-		public CommentsFilteredById Where(Func<ICommentsId, IEnumerable<int>> f)
+		#region Where
+
+		public CommentsFilteredById Where(Func<ICommentsIdPostIdQuestionIdAnswerIdUserIdMePageFromDateFilter, FilterIds> f)
 		{
-			return new CommentsFilteredById(oauth, site, f(new CommentsInterfacesImpl()));
+			return new CommentsFilteredById(this.Url, f(new CommentsInterfacesImpl()));
 		}
 
-		public CommentsFilteredByQuestionId Where(Func<ICommentsQuestion, IEnumerable<int>> f)
+		public CommentsFilteredByQuestionId Where(Func<ICommentsIdPostIdQuestionIdAnswerIdUserIdMePageFromDateFilter, FilterQuestionIds> f)
 		{
-			return new CommentsFilteredByQuestionId(oauth, site, f(new CommentsInterfacesImpl()));
+			return new CommentsFilteredByQuestionId(this.Url, f(new CommentsInterfacesImpl()));
 		}
 
-		public CommentsFilteredByUserId Where(Func<ICommentsPostingUser, IEnumerable<int>> f)
+		public CommentsFilteredByAnswerId Where(Func<ICommentsIdPostIdQuestionIdAnswerIdUserIdMePageFromDateFilter, FilterAnswerIds> f)
 		{
-			return new CommentsFilteredByUserId(oauth, site, f(new CommentsInterfacesImpl()));
+			return new CommentsFilteredByAnswerId(this.Url, f(new CommentsInterfacesImpl()));
 		}
+
+		public CommentsFilteredByPostId Where(Func<ICommentsIdPostIdQuestionIdAnswerIdUserIdMePageFromDateFilter, FilterPostIds> f)
+		{
+			return new CommentsFilteredByPostId(this.Url, f(new CommentsInterfacesImpl()));
+		}
+
+		public CommentsFilteredByUserId Where(Func<ICommentsIdPostIdQuestionIdAnswerIdUserIdMePageFromDateFilter, FilterUserIds> f)
+		{
+			return new CommentsFilteredByUserId(this.Url, f(new CommentsInterfacesImpl()));
+		}
+
+		public CommentsFilteredByMe Where(Func<ICommentsIdPostIdQuestionIdAnswerIdUserIdMePageFromDateFilter, FilterMe> f)
+		{
+			return new CommentsFilteredByMe(this.Url);
+		}
+
+		#endregion
+
+		#region Complex
+
+		public FilteredByPage<Comment> Where(Func<ICommentsIdPostIdQuestionIdAnswerIdUserIdMePageFromDateFilter, FilterPage> f)
+		{
+			return new FilteredByPage<Comment>(this.Url, f(new CommentsInterfacesImpl()));
+		}
+
+		public FilteredByFromDate<Comment> Where(Func<ICommentsIdPostIdQuestionIdAnswerIdUserIdMePageFromDateFilter, FilterFromDate> f)
+		{
+			return new FilteredByFromDate<Comment>(this.Url, f(new CommentsInterfacesImpl()));
+		}
+
+		public FilteredByFilter<Comment> Where(Func<ICommentsIdPostIdQuestionIdAnswerIdUserIdMePageFromDateFilter, FilterFilter> f)
+		{
+			return new FilteredByFilter<Comment>(this.Url, f(new CommentsInterfacesImpl()));
+		}
+
+		#endregion
+
+		#region OrderBy
+
+		public OrderBy<Comment> OrderBy(Func<IOrderByCreationScore, FilterOrderBy> f)
+		{
+			return new OrderBy<Comment>(this.Url, f(new InterfacesImpl()));
+		}
+
+		public OrderByDescending<Comment> OrderByDescending(Func<IOrderByCreationScore, FilterOrderBy> f)
+		{
+			return new OrderByDescending<Comment>(this.Url, f(new InterfacesImpl()));
+		}
+
+		#endregion
 	}
 }

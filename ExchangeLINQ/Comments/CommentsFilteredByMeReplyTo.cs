@@ -8,17 +8,17 @@ using System;
 
 namespace ExchangeLINQ.Comments
 {
-	internal class CommentsFilteredByUserIdReplyTo : ProcessorState<Answer>
+	internal class CommentsFilteredByMeReplyTo : ProcessorState<Answer>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="CommentsFilteredById"/> class.
+		/// Initializes a new instance of the <see cref="CommentsFilteredByUserIdReplyTo"/> class.
 		/// </summary>
 		/// <param name="url">The URL.</param>
 		/// <param name="ids">The ids.</param>
-		internal CommentsFilteredByUserIdReplyTo(ExchangeUrl url, FilterUserIds ids, FilterToId toid)
+		internal CommentsFilteredByMeReplyTo(ExchangeUrl url, FilterToId toid)
 		{
 			this.Url = url;
-			this.Url.QueryUrl = string.Format(UrlConstants.CommentsToUserIdByUserIdUrl, string.Join(";", ids.Value), toid.Value);
+			this.Url.QueryUrl = string.Format(UrlConstants.CommentsToUserIdByMeUrl, toid);
 		}
 
 		#region Complex

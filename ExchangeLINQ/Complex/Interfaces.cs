@@ -39,9 +39,13 @@ namespace ExchangeLINQ.Complex
 		Equal<FilterFilter, string> Filter { get; }
 	}
 
-	public interface IOrderByActivityCreationScore
+	public interface IOrderByActivityCreationScore : IOrderByCreationScore
 	{
 		FilterOrderBy Activity { get; }
+	}
+
+	public interface IOrderByCreationScore
+	{
 		FilterOrderBy Creation { get; }
 		FilterOrderBy Score { get; }
 	}
