@@ -1,5 +1,4 @@
 ﻿using System.Windows.Media;
-using ExchangeLINQ.Common;
 using Newtonsoft.Json;
 
 namespace ExchangeLINQ.Models

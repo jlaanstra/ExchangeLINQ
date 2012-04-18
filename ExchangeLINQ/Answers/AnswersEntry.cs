@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using ExchangeLINQ.Common;
 using ExchangeLINQ.Common.State;
-using ExchangeLINQ.Context;
-using ExchangeLINQ.Models;
 using ExchangeLINQ.Complex;
+using ExchangeLINQ.Models;
 
 namespace ExchangeLINQ.Answers
 {

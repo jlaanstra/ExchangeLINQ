@@ -47,10 +47,10 @@
     <DocumentationFile>..\Bin\Release\ExchangeLINQ.SL4.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="mscorlib" />
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.4.5.2\lib\sl4\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.4.5.3\lib\sl4\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="mscorlib" />
     <Reference Include="System.Reactive, Version=1.0.10621.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows" />
@@ -194,6 +194,7 @@
     <Compile Include="Questions\QuestionsFilteredByIsRelatedTo.cs" />
     <Compile Include="Questions\QuestionsFilteredByLinksTo.cs" />
     <Compile Include="Questions\QuestionsFilteredByNoAnswers.cs" />
+    <Compile Include="Questions\QuestionsFilteredByNoAnswersTag.cs" />
     <Compile Include="Questions\QuestionsFilteredByTag.cs" />
     <Compile Include="Questions\QuestionsFilteredByUnanswered.cs" />
     <Compile Include="Questions\QuestionsFilteredByUnansweredTag.cs" />

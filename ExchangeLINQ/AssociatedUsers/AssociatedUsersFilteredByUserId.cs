@@ -1,8 +1,8 @@
-﻿using ExchangeLINQ.Common;
+﻿using System;
+using ExchangeLINQ.Common;
 using ExchangeLINQ.Common.State;
-using ExchangeLINQ.Models;
 using ExchangeLINQ.Complex;
-using System;
+using ExchangeLINQ.Models;
 
 namespace ExchangeLINQ.AssociatedUsers
 {

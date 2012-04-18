@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using ExchangeLINQ.Common.State;
-using ExchangeLINQ.Context;
-using ExchangeLINQ.Models;
 using ExchangeLINQ.Common;
+using ExchangeLINQ.Common.State;
+using ExchangeLINQ.Models;
 
 namespace ExchangeLINQ.Comments
 {

@@ -33,7 +33,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.4.5.3\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
@@ -171,6 +170,7 @@
     <Compile Include="Questions\QuestionsFilteredByIsRelatedTo.cs" />
     <Compile Include="Questions\QuestionsFilteredByLinksTo.cs" />
     <Compile Include="Questions\QuestionsFilteredByNoAnswers.cs" />
+    <Compile Include="Questions\QuestionsFilteredByNoAnswersTag.cs" />
     <Compile Include="Questions\QuestionsFilteredByTag.cs" />
     <Compile Include="Questions\QuestionsFilteredByUnanswered.cs" />
     <Compile Include="Questions\QuestionsFilteredByUnansweredTag.cs" />
@@ -199,9 +199,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tags\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

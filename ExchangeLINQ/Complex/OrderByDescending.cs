@@ -1,8 +1,6 @@
 ﻿using System;
 using ExchangeLINQ.Common;
 using ExchangeLINQ.Common.State;
-using ExchangeLINQ.Complex;
-using ExchangeLINQ.Models;
 
 namespace ExchangeLINQ.Complex
 {

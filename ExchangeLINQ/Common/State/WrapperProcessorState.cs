@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reactive.Linq;
-using ExchangeLINQ.Models;
 using ExchangeLINQ.Common.Processor;
+using ExchangeLINQ.Models;
 
 namespace ExchangeLINQ.Common.State
 {

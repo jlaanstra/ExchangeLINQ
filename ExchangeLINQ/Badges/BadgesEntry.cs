@@ -1,9 +1,8 @@
-﻿using ExchangeLINQ.Common.State;
-using ExchangeLINQ.Context;
-using ExchangeLINQ.Models;
+﻿using System;
 using ExchangeLINQ.Common;
-using System;
+using ExchangeLINQ.Common.State;
 using ExchangeLINQ.Complex;
+using ExchangeLINQ.Models;
 
 namespace ExchangeLINQ.Badges
 {

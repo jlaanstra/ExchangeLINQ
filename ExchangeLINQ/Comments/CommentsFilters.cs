@@ -1,6 +1,4 @@
-﻿using System;
-using System.Net;
-using ExchangeLINQ.Common;
+﻿using ExchangeLINQ.Common;
 using ExchangeLINQ.Common.Types;
 
 namespace ExchangeLINQ.Comments

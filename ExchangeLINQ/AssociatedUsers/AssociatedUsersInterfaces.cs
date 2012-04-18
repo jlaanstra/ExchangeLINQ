@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using ExchangeLINQ.Complex;
+﻿using ExchangeLINQ.Common;
 using ExchangeLINQ.Common.Types;
-using ExchangeLINQ.Common;
+using ExchangeLINQ.Complex;
 
 namespace ExchangeLINQ.AssociatedUsers
 {

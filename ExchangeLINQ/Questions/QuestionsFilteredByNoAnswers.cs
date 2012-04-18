@@ -18,24 +18,36 @@ namespace ExchangeLINQ.Questions
 			this.Url.QueryUrl = UrlConstants.NoAnswersQuestionsUrl;
 		}
 
-		public FilteredByPage<Question> Where(Func<IPageFromDateFilter, FilterPage> f)
+		public QuestionsFilteredByNoAnswersTag Where(Func<IQuestionTagsPageFromDateFilter, FilterTags> f)
 		{
-			FilterPage filter = f(new InterfacesImpl());
+			FilterTags filter = f(new QuestionsInterfacesImpl());
+			return new QuestionsFilteredByNoAnswersTag(this.Url, filter);
+		}
+
+		#region Complex		
+
+		public FilteredByPage<Question> Where(Func<IQuestionTagsPageFromDateFilter, FilterPage> f)
+		{
+			FilterPage filter = f(new QuestionsInterfacesImpl());
 			return new FilteredByPage<Question>(this.Url, filter);
 		}
 
-		public FilteredByFromDate<Question> Where(Func<IPageFromDateFilter, FilterFromDate> f)
+		public FilteredByFromDate<Question> Where(Func<IQuestionTagsPageFromDateFilter, FilterFromDate> f)
 		{
-			FilterFromDate filter = f(new InterfacesImpl());
+			FilterFromDate filter = f(new QuestionsInterfacesImpl());
 			return new FilteredByFromDate<Question>(this.Url, filter);
 		}
 
-		public FilteredByFilter<Question> Where(Func<IPageFromDateFilter, FilterFilter> f)
+		public FilteredByFilter<Question> Where(Func<IQuestionTagsPageFromDateFilter, FilterFilter> f)
 		{
-			FilterFilter filter = f(new InterfacesImpl());
+			FilterFilter filter = f(new QuestionsInterfacesImpl());
 			return new FilteredByFilter<Question>(this.Url, filter);
 		}
 
+		#endregion
+
+		#region OrderBy
+		
 		public OrderBy<Question> OrderBy(Func<IOrderByActivityCreationScore, FilterOrderBy> f)
 		{
 			FilterOrderBy filter = f(new QuestionsInterfacesImpl());
@@ -47,5 +59,7 @@ namespace ExchangeLINQ.Questions
 			FilterOrderBy filter = f(new QuestionsInterfacesImpl());
 			return new OrderByDescending<Question>(this.Url, filter);
 		}
+
+		#endregion
 	}
 }

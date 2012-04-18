@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using ExchangeLINQ.Common;
 using ExchangeLINQ.Common.State;
-using ExchangeLINQ.AccessTokens;
 
 namespace ExchangeLINQ.Applications
 {

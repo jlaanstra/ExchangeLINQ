@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using ExchangeLINQ.Common.Types;
 using ExchangeLINQ.Common;
+using ExchangeLINQ.Common.Types;
 using ExchangeLINQ.Complex;
 
 namespace ExchangeLINQ.Answers

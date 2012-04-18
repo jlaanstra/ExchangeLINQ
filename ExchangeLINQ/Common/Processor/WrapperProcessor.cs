@@ -6,7 +6,7 @@ using ExchangeLINQ.Models;
 using Newtonsoft.Json;
 
 #if SILVERLIGHT || WINDOWSPHONE
-using ExchangeLINQ.GZip;
+
 #endif
 
 namespace ExchangeLINQ.Common.Processor

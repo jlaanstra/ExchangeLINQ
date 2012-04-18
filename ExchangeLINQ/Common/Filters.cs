@@ -1,5 +1,5 @@
-﻿using ExchangeLINQ.Common.Types;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using ExchangeLINQ.Common.Types;
 
 namespace ExchangeLINQ.Common
 {
