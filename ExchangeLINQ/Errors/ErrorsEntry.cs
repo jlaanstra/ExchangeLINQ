@@ -18,11 +18,6 @@ namespace ExchangeLINQ.Errors
 			this.Url.QueryUrl = UrlConstants.ErrorsUrl;
 		}
 
-		/// <summary>
-		/// Wheres the specified id picker.
-		/// </summary>
-		/// <param name="idPicker">The id picker.</param>
-		/// <returns></returns>
 		public ErrorsFilteredById Where(Func<IdProp<FilterId>, FilterId> f)
 		{
 			return new ErrorsFilteredById(this.Url, f(new IdProp<FilterId>()));

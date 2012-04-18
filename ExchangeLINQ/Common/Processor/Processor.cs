@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.Contracts;
 using System.Collections.Generic;
 using System.Net;
 using System.Reactive.Linq;
@@ -44,6 +45,8 @@ namespace ExchangeLINQ.Common.Processor
 		/// <returns></returns>
 		public IDisposable SubscribeSingle(IObserver<T> observer, string url)
 		{
+			Contract.Requires(url != null);
+
 			IObservable<T> observable = from req in Observable.Return(this.CreateWebRequest(new Uri(url)))
 										from resp in Observable.FromAsyncPattern<WebResponse>(req.BeginGetResponse, req.EndGetResponse)()
 										from token in this.CreateSingleFromJson(resp.GetString())
@@ -59,6 +62,8 @@ namespace ExchangeLINQ.Common.Processor
 		/// <returns></returns>
 		public IDisposable SubscribeList(IObserver<T> observer, string url)
 		{
+			Contract.Requires(url != null);
+
 			IObservable<T> observable = from req in Observable.Return(this.CreateWebRequest(new Uri(url)))
 											from resp in Observable.FromAsyncPattern<WebResponse>(req.BeginGetResponse, req.EndGetResponse)()
 											from token in this.CreateListFromJson(resp.GetString())

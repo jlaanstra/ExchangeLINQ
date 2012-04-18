@@ -4,6 +4,7 @@ using System.Net;
 using System.Reactive.Linq;
 using ExchangeLINQ.Models;
 using Newtonsoft.Json;
+using System.Diagnostics.Contracts;
 
 #if SILVERLIGHT || WINDOWSPHONE
 
@@ -30,6 +31,8 @@ namespace ExchangeLINQ.Common.Processor
 		/// <returns></returns>
 		public IDisposable Subscribe(IObserver<ResponseWrapper<T>> observer, string url)
 		{
+			Contract.Requires(url != null);
+
 			IObservable<ResponseWrapper<T>> observable = from req in Observable.Return(this.CreateWebRequest(new Uri(url)))
 														 from resp in Observable.FromAsyncPattern<WebResponse>(req.BeginGetResponse, req.EndGetResponse)()
 														 from wrapper in this.CreateWrapperFromJson(resp.GetString())

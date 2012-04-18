@@ -9,10 +9,6 @@ namespace ExchangeLINQ.Comments
 {
 	internal class CommentsEntry : ProcessorState<Comment>
 	{
-		private IOAuth oauth;
-		private ISite site;
-		private string queryUrl = "";
-
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AccessTokensEntry"/> class.
 		/// </summary>
@@ -20,6 +16,7 @@ namespace ExchangeLINQ.Comments
 		public CommentsEntry(ExchangeUrl url)
 		{
 			this.Url = url;
+			this.Url.QueryUrl = UrlConstants.CommentsUrl;
 		}
 
 		#region Where

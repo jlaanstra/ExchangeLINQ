@@ -18,11 +18,6 @@ namespace ExchangeLINQ.Inbox
 			this.Url.QueryUrl = UrlConstants.InboxUrl;
 		}
 
-		/// <summary>
-		/// Wheres the specified id picker.
-		/// </summary>
-		/// <param name="idPicker">The id picker.</param>
-		/// <returns></returns>
 		public InboxFilteredByUnread Where(Func<IInboxUnreadPageFilter, FilterUnread> f)
 		{
 			return new InboxFilteredByUnread(this.Url);
