@@ -42,11 +42,11 @@ namespace ExchangeLINQ.Models
 
 		[JsonProperty("closed_beta_date")]
 		[JsonConverter(typeof(UnixTimestampConverter))]
-		public DateTime ClosedBetaDate { get; set; }
+		public DateTime? ClosedBetaDate { get; set; }
 
 		[JsonProperty("open_beta_date")]
 		[JsonConverter(typeof(UnixTimestampConverter))]
-		public DateTime OpenBetaDate { get; set; }
+		public DateTime? OpenBetaDate { get; set; }
 
 		[JsonProperty("launch_date")]
 		[JsonConverter(typeof(UnixTimestampConverter))]
