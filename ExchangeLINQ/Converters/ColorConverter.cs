@@ -43,7 +43,7 @@ namespace ExchangeLINQ.Common
 		{
 			get
 			{
-				return false;
+				return true;
 			}
 		}
 
@@ -83,7 +83,15 @@ namespace ExchangeLINQ.Common
 		/// <param name="serializer">The calling serializer.</param>
 		public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
 		{
-			throw new NotImplementedException();
+			if (value is Color)
+			{
+				Color c = (Color)value;
+				writer.WriteValue(string.Format("#{0:X2}{0:X2}{0:X2}{0:X2}", c.A, c.R, c.G, c.B));
+			}
+			else
+			{
+				throw new InvalidOperationException();
+			}
 		}
 	}
 }

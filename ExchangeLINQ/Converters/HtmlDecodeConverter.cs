@@ -85,16 +85,15 @@ namespace ExchangeLINQ.Common
 		/// <param name="serializer">The calling serializer.</param>
 		public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
 		{
-			if (!(value is string))
+			string val = value as string;
+			if (val != null)
+			{
+				writer.WriteValue(HttpUtility.HtmlEncode(val));
+			}
+			else
 			{
 				throw new InvalidOperationException();
-			}
-			string val = value as string;
-			if (val == null)
-			{
-				writer.WriteValue(value);
-			}
-			writer.WriteValue(HttpUtility.HtmlEncode(val));
+			}			
 		}
 	}
 }
