@@ -6,7 +6,7 @@ namespace ExchangeLINQ.Search
 	{
 		public InProp<FilterTags, string> Tags { get { return new InProp<FilterTags, string>(); } }
 
-		public Equal<FilterTitle, string> Title { get { return new Equal<FilterTitle, string>(); } }
+		public ContainsProp<FilterTitle, string> Title { get { return new ContainsProp<FilterTitle, string>(); } }
 
 		#region ISearchOrderByActivityCreationScoreRelevance
 		

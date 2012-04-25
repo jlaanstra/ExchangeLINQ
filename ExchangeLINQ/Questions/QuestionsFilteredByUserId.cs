@@ -12,7 +12,7 @@ namespace ExchangeLINQ.Questions
 		/// Initializes a new instance of the <see cref="AccessTokensFilteredByTokens"/> class.
 		/// </summary>
 		/// <param name="tokens">The tokens.</param>
-		public QuestionsFilteredByUserId(ExchangeUrl url, FilterUserId filter)
+		public QuestionsFilteredByUserId(ExchangeUrl url, FilterUserIds filter)
 		{
 			this.Url = url;
 			this.Url.QueryUrl = string.Format(UrlConstants.QuestionsByUserIdUrl, String.Join(";", filter.Value));

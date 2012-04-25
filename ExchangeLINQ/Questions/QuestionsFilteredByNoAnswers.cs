@@ -9,9 +9,9 @@ namespace ExchangeLINQ.Questions
 	public class QuestionsFilteredByNoAnswers : ProcessorState<Question>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="AccessTokensFilteredByTokens"/> class.
+		/// Initializes a new instance of the <see cref="QuestionsFilteredByNoAnswers"/> class.
 		/// </summary>
-		/// <param name="tokens">The tokens.</param>
+		/// <param name="url">The URL.</param>
 		internal QuestionsFilteredByNoAnswers(ExchangeUrl url)
 		{
 			this.Url = url;

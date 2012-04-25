@@ -6,9 +6,7 @@ namespace ExchangeLINQ.Questions
 	public class FilterTags : Filter<IEnumerable<string>> { }
 
 	public class FilterIsRelatedTo : Filter<IEnumerable<int>> { }
-
-	public class FilterUserId : Filter<IEnumerable<int>> { }
-
+	
 	public class FilterLinksToId : Filter<int> { }
 
 	public class FilterPostingUserId : Filter<int> { }

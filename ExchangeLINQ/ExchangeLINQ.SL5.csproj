@@ -190,6 +190,7 @@
     <Compile Include="Common\State\ProcessorState.cs" />
     <Compile Include="Common\State\State.cs" />
     <Compile Include="Common\State\WrapperProcessorState.cs" />
+    <Compile Include="Common\Types\Contains.cs" />
     <Compile Include="Common\Types\Empty.cs" />
     <Compile Include="Common\Types\Equal.cs" />
     <Compile Include="Common\Types\Filter.cs" />
@@ -257,6 +258,7 @@
     <Compile Include="Models\Site.cs" />
     <Compile Include="Models\SiteState.cs" />
     <Compile Include="Models\Styling.cs" />
+    <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -287,6 +289,17 @@
     <Compile Include="Sites\SitesEntry.cs" />
     <Compile Include="StackExchangeContext.cs" />
     <Compile Include="Stubs.cs" />
+    <Compile Include="Tags\ContainsIn.cs" />
+    <Compile Include="Tags\TagsEntry.cs" />
+    <Compile Include="Tags\TagsFilteredByMe.cs" />
+    <Compile Include="Tags\TagsFilteredByModeratorOnly.cs" />
+    <Compile Include="Tags\TagsFilteredByNameContains.cs" />
+    <Compile Include="Tags\TagsFilteredByNames.cs" />
+    <Compile Include="Tags\TagsFilteredByRequired.cs" />
+    <Compile Include="Tags\TagsFilteredByUserId.cs" />
+    <Compile Include="Tags\TagsFilters.cs" />
+    <Compile Include="Tags\TagsInterfaces.cs" />
+    <Compile Include="Tags\TagsInterfacesImpl.cs" />
     <Compile Include="UrlConstants.cs" />
     <Compile Include="Users\UsersEntry.cs" />
     <Compile Include="WebResponseExtensions.cs" />
@@ -294,9 +307,7 @@
   <ItemGroup>
     <Content Include="Calls.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tags\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
