@@ -6,7 +6,7 @@ using ExchangeLINQ.Models;
 
 namespace ExchangeLINQ.Comments
 {
-	internal class CommentsFilteredByUserIdReplyTo : ProcessorState<Answer>
+	public class CommentsFilteredByUserIdReplyTo : ProcessorState<Answer>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CommentsFilteredById"/> class.

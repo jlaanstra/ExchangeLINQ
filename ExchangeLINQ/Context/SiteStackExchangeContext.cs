@@ -2,6 +2,9 @@
 using ExchangeLINQ.Common;
 using ExchangeLINQ.Questions;
 using ExchangeLINQ.Search;
+using ExchangeLINQ.Comments;
+using ExchangeLINQ.Tags;
+using ExchangeLINQ.Badges;
 
 namespace ExchangeLINQ.Context
 {
@@ -60,6 +63,37 @@ namespace ExchangeLINQ.Context
 				var url = new ExchangeUrl(this);
 				url.AddQueryOption("site", this.ApiSiteParameter);
 				return new SearchEntry(url);
+			}
+		}
+
+
+		public CommentsEntry Comments
+		{
+			get
+			{
+				var url = new ExchangeUrl(this);
+				url.AddQueryOption("site", this.ApiSiteParameter);
+				return new CommentsEntry(url);
+			}
+		}
+
+		public TagsEntry Tags
+		{
+			get
+			{
+				var url = new ExchangeUrl(this);
+				url.AddQueryOption("site", this.ApiSiteParameter);
+				return new TagsEntry(url);
+			}
+		}
+
+		public BadgesEntry Badges
+		{
+			get
+			{
+				var url = new ExchangeUrl(this);
+				url.AddQueryOption("site", this.ApiSiteParameter);
+				return new BadgesEntry(url);
 			}
 		}
 	}

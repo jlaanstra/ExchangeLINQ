@@ -6,13 +6,13 @@ using ExchangeLINQ.Models;
 
 namespace ExchangeLINQ.Badges
 {
-	internal class BadgesFilteredByName : ProcessorState<Badge>
+	public class BadgesFilteredByName : ProcessorState<Badge>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="BadgesFilteredById"/> class.
 		/// </summary>
 		/// <param name="tokens">The tokens.</param>
-		public BadgesFilteredByName(ExchangeUrl url, FilterName name)
+		internal BadgesFilteredByName(ExchangeUrl url, FilterName name)
 		{
 			this.Url = url;
 			this.Url.AddQueryOption("inname", name.Value);

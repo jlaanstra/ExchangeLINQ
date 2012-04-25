@@ -5,7 +5,7 @@ using ExchangeLINQ.Models;
 
 namespace ExchangeLINQ.Comments
 {
-	internal class CommentsFilteredByUserId : ProcessorState<Answer>
+	public class CommentsFilteredByUserId : ProcessorState<Answer>
 	{
 		private FilterUserIds ids;
 

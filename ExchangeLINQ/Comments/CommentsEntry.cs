@@ -7,13 +7,13 @@ using ExchangeLINQ.Models;
 
 namespace ExchangeLINQ.Comments
 {
-	internal class CommentsEntry : ProcessorState<Comment>
+	public class CommentsEntry : ProcessorState<Comment>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AccessTokensEntry"/> class.
 		/// </summary>
 		/// <param name="oauth">The oauth.</param>
-		public CommentsEntry(ExchangeUrl url)
+		internal CommentsEntry(ExchangeUrl url)
 		{
 			this.Url = url;
 			this.Url.QueryUrl = UrlConstants.CommentsUrl;

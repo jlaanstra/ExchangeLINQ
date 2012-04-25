@@ -6,13 +6,13 @@ using ExchangeLINQ.Models;
 
 namespace ExchangeLINQ.Badges
 {
-	internal class BadgesEntry : ProcessorState<Badge>
+	public class BadgesEntry : ProcessorState<Badge>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AccessTokensEntry"/> class.
 		/// </summary>
 		/// <param name="oauth">The oauth.</param>
-		public BadgesEntry(ExchangeUrl url)
+		internal BadgesEntry(ExchangeUrl url)
 		{
 			this.Url = url;
 			this.Url.QueryUrl = UrlConstants.BadgesUrl;

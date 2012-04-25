@@ -6,7 +6,7 @@ using ExchangeLINQ.Models;
 
 namespace ExchangeLINQ.Badges
 {
-	internal class BadgesFilteredById : ProcessorState<Badge>
+	public class BadgesFilteredById : ProcessorState<Badge>
 	{
 		private FilterIds ids;
 
@@ -14,7 +14,7 @@ namespace ExchangeLINQ.Badges
 		/// Initializes a new instance of the <see cref="BadgesFilteredById"/> class.
 		/// </summary>
 		/// <param name="tokens">The tokens.</param>
-		public BadgesFilteredById(ExchangeUrl url, FilterIds ids)
+		internal BadgesFilteredById(ExchangeUrl url, FilterIds ids)
 		{
 			this.Url = url;
 			this.Url.QueryUrl = string.Format(UrlConstants.BadgesByIdUrl, string.Join(";", ids.Value));
