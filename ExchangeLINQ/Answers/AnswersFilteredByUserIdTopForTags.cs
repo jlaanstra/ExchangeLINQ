@@ -6,16 +6,16 @@ using System;
 
 namespace ExchangeLINQ.Answers
 {
-	public class AnswersFilteredByQuestionId : ProcessorState<Answer>
+	public class AnswersFilteredByUserIdTopForTags : ProcessorState<Answer>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AccessTokensFilteredByTokens"/> class.
 		/// </summary>
 		/// <param name="tokens">The tokens.</param>
-		internal AnswersFilteredByQuestionId(ExchangeUrl url, FilterIds ids)
+		internal AnswersFilteredByUserIdTopForTags(ExchangeUrl url, FilterUserIds ids, FilterTags tags)
 		{
 			this.Url = url;
-			this.Url.QueryUrl = string.Format(UrlConstants.AnswersByQuestionIdUrl, string.Join(";", ids.Value));
+			this.Url.QueryUrl = string.Format(UrlConstants.TopAnswersByTagByUserIdUrl, string.Join(";", ids.Value), string.Join(";", tags.Value));
 		}
 
 		#region Complex

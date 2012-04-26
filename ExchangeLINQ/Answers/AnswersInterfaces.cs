@@ -10,6 +10,11 @@ namespace ExchangeLINQ.Answers
 
 		InProp<FilterIds, int> Id { get; }
 
-		IdProp<InProp<FilterUserIds, int>> PostingUser { get; }
+		UserProp<IdProp<InProp<FilterUserIds, int>>> PostingUser { get; }
+	}
+
+	public interface IAnswersIsTopAnswerForTagPageFromDateFilter : IPageFromDateFilter
+	{
+		InProp<FilterTags, string> IsTopAnswerForTag { get; }
 	}
 }

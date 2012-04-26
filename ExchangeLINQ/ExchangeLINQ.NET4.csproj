@@ -131,6 +131,9 @@
     <Compile Include="Answers\AnswersFilters.cs" />
     <Compile Include="Answers\AnswersInterfaces.cs" />
     <Compile Include="Answers\AnswersInterfacesImpl.cs" />
+    <Compile Include="Answers\AnswersFilteredByMe.cs" />
+    <Compile Include="Answers\AnswersFilteredByUserIdTopForTags.cs" />
+    <Compile Include="Answers\AnswersFilteredByMeTopForTags.cs" />
     <Compile Include="Applications\ApplicationsEntry.cs" />
     <Compile Include="Applications\ApplicationsFilteredByTokens.cs" />
     <Compile Include="Applications\ApplicationsFilteredByTokensDeauthenticate.cs" />
@@ -274,7 +277,15 @@
     <Compile Include="Tags\TagsInterfaces.cs" />
     <Compile Include="Tags\TagsInterfacesImpl.cs" />
     <Compile Include="UrlConstants.cs" />
+    <Compile Include="Users\UsersFilteredByIsModeratorElected.cs" />
     <Compile Include="Users\UsersEntry.cs" />
+    <Compile Include="Users\UsersFilteredById.cs" />
+    <Compile Include="Users\UsersFilteredByIsModerator.cs" />
+    <Compile Include="Users\UsersFilteredByMe.cs" />
+    <Compile Include="Users\UsersFilteredByName.cs" />
+    <Compile Include="Users\UsersFilters.cs" />
+    <Compile Include="Users\UsersInterfaces.cs" />
+    <Compile Include="Users\UsersInterfacesImpl.cs" />
     <Compile Include="WebResponseExtensions.cs" />
   </ItemGroup>
   <ItemGroup>

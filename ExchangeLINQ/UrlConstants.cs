@@ -50,7 +50,7 @@ namespace ExchangeLINQ
 		public const string TopAskerPostersByTagsUrl =					"/tags/{tag}/top-askers/{period}";
 		public const string WikiEntriesByTagUrl =						"/tags/{tags}/wikis";
 		public const string UsersUrl =									"/users";
-		public const string UserssByIdUrl =								"/users/{0}";
+		public const string UsersByIdUrl =								"/users/{0}";
 		public const string MeUrl =										"/me";
 		public const string AnswersByUserIdUrl =						"/users/{0}/answers";
 		public const string AnswersByMeUrl =							"/me/answers";
@@ -82,9 +82,9 @@ namespace ExchangeLINQ
 		public const string SuggestedEditsByMeUrl =						"/me/suggested-edits";
 		public const string TagsByUserIdUrl =							"/users/{0}/tags";
 		public const string TagsByMeUrl =								"/me/tags";
-		public const string TopAnswersByTagByUserIdUrl =				"/users/{0}/tags/{tags}/top-answers";
+		public const string TopAnswersByTagByUserIdUrl =				"/users/{0}/tags/{1}/top-answers";
 		public const string TopAnswersByTagByMeUrl =					"/me/tags/{tags}/top-answers";
-		public const string TopQuestionByTagByUserIdUrl =				"/users/{0}/tags/{tags}/top-questions";
+		public const string TopQuestionByTagByUserIdUrl =				"/users/{0}/tags/{1}/top-questions";
 		public const string TopQuestionByTagByMeUrl =					"/me/tags/{tags}/top-questions";
 		public const string TimelineByUserIdUrl =						"/users/{0}/timeline";
 		public const string TimelineByMeUrl =							"/me/timeline";

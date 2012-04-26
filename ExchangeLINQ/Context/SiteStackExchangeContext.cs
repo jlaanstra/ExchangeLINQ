@@ -5,6 +5,7 @@ using ExchangeLINQ.Search;
 using ExchangeLINQ.Comments;
 using ExchangeLINQ.Tags;
 using ExchangeLINQ.Badges;
+using ExchangeLINQ.Users;
 
 namespace ExchangeLINQ.Context
 {
@@ -94,6 +95,16 @@ namespace ExchangeLINQ.Context
 				var url = new ExchangeUrl(this);
 				url.AddQueryOption("site", this.ApiSiteParameter);
 				return new BadgesEntry(url);
+			}
+		}
+
+		public UsersEntry Users
+		{
+			get
+			{
+				var url = new ExchangeUrl(this);
+				url.AddQueryOption("site", this.ApiSiteParameter);
+				return new UsersEntry(url);
 			}
 		}
 	}

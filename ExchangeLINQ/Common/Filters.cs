@@ -10,4 +10,6 @@ namespace ExchangeLINQ.Common
 	public class FilterMe { }
 
 	public class FilterOrderBy : Filter<string> { }
+
+	public class FilterTags : Filter<IEnumerable<string>> { }
 }
