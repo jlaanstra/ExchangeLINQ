@@ -51,6 +51,16 @@ namespace ExchangeLINQ.Questions
 			return new QuestionsFilteredByNoAnswers(this.Url);
 		}
 
+		public QuestionsFilteredByUserId Where(Func<IQuestionIdTagsLinksToIsRelatedToPostingUserIsFeaturedIsUnansweredHasNoAnswersPageFromDateFilter, FilterUserIds> f)
+		{
+			return new QuestionsFilteredByUserId(this.Url, f(new QuestionsInterfacesImpl()));
+		}
+
+		public QuestionsFilteredByMe Where(Func<IQuestionIdTagsLinksToIsRelatedToPostingUserIsFeaturedIsUnansweredHasNoAnswersPageFromDateFilter, FilterMe> f)
+		{
+			return new QuestionsFilteredByMe(this.Url, f(new QuestionsInterfacesImpl()));
+		}
+
 		#endregion
 
 		#region Complex

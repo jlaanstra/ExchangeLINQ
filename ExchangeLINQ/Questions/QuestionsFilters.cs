@@ -9,11 +9,11 @@ namespace ExchangeLINQ.Questions
 	
 	public class FilterLinksToId : Filter<int> { }
 
-	public class FilterPostingUserId : Filter<int> { }
-
 	public class FilterFeatured { }
 
 	public class FilterUnanswered { }
 
 	public class FilterNoAnswers { }
+
+	public class FilterFavorite { }
 }

@@ -6,25 +6,25 @@ using ExchangeLINQ.Models;
 
 namespace ExchangeLINQ.Questions
 {
-	public class QuestionsFilteredByUserId : ProcessorState<Answer>
+	public class QuestionsFilteredByMe : ProcessorState<Question>
 	{
-		private FilterUserIds ids;
+		private FilterMe me;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AccessTokensFilteredByTokens"/> class.
 		/// </summary>
 		/// <param name="tokens">The tokens.</param>
-		internal QuestionsFilteredByUserId(ExchangeUrl url, FilterUserIds ids)
+		internal QuestionsFilteredByMe(ExchangeUrl url, FilterMe me)
 		{
 			this.Url = url;
-			this.Url.QueryUrl = string.Format(UrlConstants.QuestionsByUserIdUrl, String.Join(";", ids.Value));
+			this.Url.QueryUrl = UrlConstants.QuestionsByMeUrl;
 
-			this.ids = ids;
+			this.me = me;
 		}
 
-		public QuestionsFilteredByUserIdFavorites Where(Func<IQuestionIsFavoritePageFromDateFilter, FilterFavorite> f)
+		public QuestionsFilteredByMeFavorites Where(Func<IQuestionIsFavoritePageFromDateFilter, FilterFavorite> f)
 		{
-			return new QuestionsFilteredByUserIdFavorites(this.Url, this.ids, f(new QuestionsInterfacesImpl()));
+			return new QuestionsFilteredByMeFavorites(this.Url, this.me, f(new QuestionsInterfacesImpl()));
 		}
 
 		#region Complex

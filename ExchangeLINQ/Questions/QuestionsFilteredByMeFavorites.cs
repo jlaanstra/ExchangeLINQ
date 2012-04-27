@@ -6,44 +6,35 @@ using ExchangeLINQ.Models;
 
 namespace ExchangeLINQ.Questions
 {
-	public class QuestionsFilteredByUserId : ProcessorState<Answer>
+	public class QuestionsFilteredByMeFavorites : ProcessorState<Question>
 	{
-		private FilterUserIds ids;
-
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AccessTokensFilteredByTokens"/> class.
 		/// </summary>
 		/// <param name="tokens">The tokens.</param>
-		internal QuestionsFilteredByUserId(ExchangeUrl url, FilterUserIds ids)
+		internal QuestionsFilteredByMeFavorites(ExchangeUrl url, FilterMe me, FilterFavorite favorite)
 		{
 			this.Url = url;
-			this.Url.QueryUrl = string.Format(UrlConstants.QuestionsByUserIdUrl, String.Join(";", ids.Value));
-
-			this.ids = ids;
-		}
-
-		public QuestionsFilteredByUserIdFavorites Where(Func<IQuestionIsFavoritePageFromDateFilter, FilterFavorite> f)
-		{
-			return new QuestionsFilteredByUserIdFavorites(this.Url, this.ids, f(new QuestionsInterfacesImpl()));
+			this.Url.QueryUrl = UrlConstants.FavoritesByMeUrl;
 		}
 
 		#region Complex
-
-		public FilteredByPage<Question> Where(Func<IQuestionIsFavoritePageFromDateFilter, FilterPage> f)
+		
+		public FilteredByPage<Question> Where(Func<IPageFromDateFilter, FilterPage> f)
 		{
-			FilterPage filter = f(new QuestionsInterfacesImpl());
+			FilterPage filter = f(new InterfacesImpl());
 			return new FilteredByPage<Question>(this.Url, filter);
 		}
 
-		public FilteredByFromDate<Question> Where(Func<IQuestionIsFavoritePageFromDateFilter, FilterFromDate> f)
+		public FilteredByFromDate<Question> Where(Func<IPageFromDateFilter, FilterFromDate> f)
 		{
-			FilterFromDate filter = f(new QuestionsInterfacesImpl());
+			FilterFromDate filter = f(new InterfacesImpl());
 			return new FilteredByFromDate<Question>(this.Url, filter);
 		}
 
-		public FilteredByFilter<Question> Where(Func<IQuestionIsFavoritePageFromDateFilter, FilterFilter> f)
+		public FilteredByFilter<Question> Where(Func<IPageFromDateFilter, FilterFilter> f)
 		{
-			FilterFilter filter = f(new QuestionsInterfacesImpl());
+			FilterFilter filter = f(new InterfacesImpl());
 			return new FilteredByFilter<Question>(this.Url, filter);
 		}
 

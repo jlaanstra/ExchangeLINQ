@@ -14,7 +14,7 @@ namespace ExchangeLINQ.Questions
 
 		IdProp<Equal<FilterLinksToId, int>> LinksTo { get; }
 
-		IdProp<Equal<FilterPostingUserId, int>> PostingUser { get; }
+		UserProp<InProp<FilterUserIds, int>> PostingUser { get; }
 
 		FilterFeatured IsFeatured { get; }
 
@@ -26,6 +26,11 @@ namespace ExchangeLINQ.Questions
 	public interface IQuestionTagsPageFromDateFilter : IPageFromDateFilter
 	{
 		InProp<FilterTags, string> Tags { get; }
+	}
+
+	public interface IQuestionIsFavoritePageFromDateFilter : IPageFromDateFilter
+	{
+		FilterFavorite IsFavorite { get; }
 	}
 
 	public interface IOrderByActivityCreationScoreHotWeekMonth : IOrderByActivityCreationScore

@@ -7,7 +7,7 @@ namespace ExchangeLINQ.Questions
 {
 	internal class QuestionsInterfacesImpl : IQuestionIdTagsLinksToIsRelatedToPostingUserIsFeaturedIsUnansweredHasNoAnswersPageFromDateFilter,
 		IQuestionTagsPageFromDateFilter, IOrderByActivityCreationScoreHotWeekMonth, IOrderByActivityCreationScore, 
-		IOrderByActivityCreationScoreRank
+		IOrderByActivityCreationScoreRank, IQuestionIsFavoritePageFromDateFilter
 	{
 		public FilterOrderBy Activity { get { return new FilterOrderBy() { Value = "activity" }; } }
 
@@ -33,7 +33,7 @@ namespace ExchangeLINQ.Questions
 
 		public IdProp<Equal<FilterLinksToId, int>> LinksTo { get { return new IdProp<Equal<FilterLinksToId, int>>(); } }
 
-		public IdProp<Equal<FilterPostingUserId, int>> PostingUser { get { return new IdProp<Equal<FilterPostingUserId, int>>(); } }
+		public UserProp<InProp<FilterUserIds, int>> PostingUser { get { return new UserProp<InProp<FilterUserIds, int>>(); } }
 
 		public FilterFeatured IsFeatured { get { return new FilterFeatured(); } }
 
@@ -48,5 +48,7 @@ namespace ExchangeLINQ.Questions
 		public Equal<FilterFilter, string> Filter { get { return new Equal<FilterFilter, string>(); } }
 
 		#endregion
+
+		public FilterFavorite IsFavorite { get { return new FilterFavorite(); } }
 	}
 }

@@ -261,6 +261,8 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Questions\QuestionsFilteredByMe.cs" />
+    <Compile Include="Questions\QuestionsFilteredByMeFavorites.cs" />
     <Compile Include="Questions\QuestionsFilteredByNoAnswersTag.cs" />
     <Compile Include="Questions\QuestionsEntry.cs" />
     <Compile Include="Questions\QuestionsFilteredByFeatured.cs" />
@@ -273,6 +275,7 @@
     <Compile Include="Questions\QuestionsFilteredByUnanswered.cs" />
     <Compile Include="Questions\QuestionsFilteredByUnansweredTag.cs" />
     <Compile Include="Questions\QuestionsFilteredByUserId.cs" />
+    <Compile Include="Questions\QuestionsFilteredByUserIdFavorites.cs" />
     <Compile Include="Questions\QuestionsFilters.cs" />
     <Compile Include="Questions\QuestionsInterfaces.cs" />
     <Compile Include="Questions\QuestionsInterfacesImpl.cs" />
