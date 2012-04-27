@@ -1,6 +1,7 @@
 ﻿
 using Newtonsoft.Json;
 using System;
+using ExchangeLINQ.Common;
 namespace ExchangeLINQ.Models
 {
 	[JsonObject(MemberSerialization.OptIn)]
@@ -25,6 +26,7 @@ namespace ExchangeLINQ.Models
 		public Badges Badges { get; set; }
 
 		[JsonProperty("creation_date")]
+		[JsonConverter(typeof(UnixTimestampConverter))]
 		public DateTime CreationDate { get; set; }
 
 		[JsonProperty("display_name")]
@@ -37,9 +39,11 @@ namespace ExchangeLINQ.Models
 		public bool IsEmployee { get; set;}
 
 		[JsonProperty("last_access_date")]
+		[JsonConverter(typeof(UnixTimestampConverter))]
 		public DateTime LastAccessDate { get; set; }
 
 		[JsonProperty("last_modified_date")]
+		[JsonConverter(typeof(UnixTimestampConverter))]
 		public DateTime? LastModifiedDate { get; set; }
 
 		[JsonProperty("link")]
@@ -73,6 +77,7 @@ namespace ExchangeLINQ.Models
 		public int ReputationChangeYear { get; set; }
 
 		[JsonProperty("timed_penalty_date")]
+		[JsonConverter(typeof(UnixTimestampConverter))]
 		public DateTime? TimedPenaltyDate { get; set; }
 
 		[JsonProperty("up_vote_count")]
