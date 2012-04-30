@@ -9,9 +9,11 @@ namespace ExchangeLINQ.Questions
 	public class QuestionsFilteredByUserIdFavorites : ProcessorState<Answer>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="AccessTokensFilteredByTokens"/> class.
+		/// Initializes a new instance of the <see cref="QuestionsFilteredByUserIdFavorites"/> class.
 		/// </summary>
-		/// <param name="tokens">The tokens.</param>
+		/// <param name="url">The URL.</param>
+		/// <param name="ids">The ids.</param>
+		/// <param name="favorite">The favorite.</param>
 		internal QuestionsFilteredByUserIdFavorites(ExchangeUrl url, FilterUserIds ids, FilterFavorite favorite)
 		{
 			this.Url = url;

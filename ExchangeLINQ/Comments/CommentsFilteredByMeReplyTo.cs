@@ -3,18 +3,22 @@ using ExchangeLINQ.Common;
 using ExchangeLINQ.Common.State;
 using ExchangeLINQ.Complex;
 using ExchangeLINQ.Models;
+using System.Diagnostics.Contracts;
 
 namespace ExchangeLINQ.Comments
 {
 	public class CommentsFilteredByMeReplyTo : ProcessorState<Answer>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="CommentsFilteredByUserIdReplyTo"/> class.
+		/// Initializes a new instance of the <see cref="CommentsFilteredByMeReplyTo"/> class.
 		/// </summary>
 		/// <param name="url">The URL.</param>
-		/// <param name="ids">The ids.</param>
+		/// <param name="toid">The toid.</param>
 		internal CommentsFilteredByMeReplyTo(ExchangeUrl url, FilterToId toid)
 		{
+			Contract.Requires(url != null);
+			Contract.Requires(toid != null);
+
 			this.Url = url;
 			this.Url.QueryUrl = string.Format(UrlConstants.CommentsToUserIdByMeUrl, toid);
 		}

@@ -206,12 +206,9 @@
     <Compile Include="Complex\Interfaces.cs" />
     <Compile Include="Complex\InterfacesImpl.cs" />
     <Compile Include="Complex\OrderBy.cs" />
-    <Compile Include="Context\INetworkStackExchangeContext.cs" />
     <Compile Include="Context\IOAuth.cs" />
-    <Compile Include="Context\ISite.cs" />
-    <Compile Include="Context\ISiteStackExchangeContext.cs" />
-    <Compile Include="Context\NetworkStackExchangeContext.cs" />
-    <Compile Include="Context\SiteStackExchangeContext.cs" />
+    <Compile Include="Context\IStackExchangeContext.cs" />
+    <Compile Include="Context\StackExchangeContextImpl.cs" />
     <Compile Include="Converters\ColorConverter.cs" />
     <Compile Include="Converters\HtmlDecodeConverter.cs" />
     <Compile Include="Converters\UnixTimestampConverter.cs" />

@@ -9,8 +9,9 @@ namespace ExchangeLINQ.Applications
 		private FilterTokens tokens;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="SEApplicationsFilteredByTokens"/> class.
+		/// Initializes a new instance of the <see cref="ApplicationsFilteredByTokens"/> class.
 		/// </summary>
+		/// <param name="url">The URL.</param>
 		/// <param name="tokens">The tokens.</param>
 		internal ApplicationsFilteredByTokens(ExchangeUrl url, FilterTokens tokens)
 		{
@@ -21,7 +22,7 @@ namespace ExchangeLINQ.Applications
 		/// <summary>
 		/// Helper function to filter tokens based on a set of ids.
 		/// </summary>
-		/// <param name="tokenSelector">The ids.</param>
+		/// <param name="f">The f.</param>
 		/// <returns></returns>
 		public ApplicationsFilteredByTokensDeauthenticate Where(Func<IApplicationsDeauthenticate, FilterDeauthenticate> f)
 		{

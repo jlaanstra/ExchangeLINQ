@@ -9,9 +9,9 @@ namespace ExchangeLINQ.Answers
 	public class AnswersEntry : ProcessorState<Answer>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="AccessTokensEntry"/> class.
+		/// Initializes a new instance of the <see cref="AnswersEntry"/> class.
 		/// </summary>
-		/// <param name="oauth">The oauth.</param>
+		/// <param name="url">The URL.</param>
 		internal AnswersEntry(ExchangeUrl url)
 		{
 			this.Url = url;
@@ -21,18 +21,28 @@ namespace ExchangeLINQ.Answers
 		/// <summary>
 		/// Implements the Select query pattern.
 		/// </summary>
-		/// <param name="a">A.</param>
+		/// <param name="f">The f.</param>
 		/// <returns></returns>
 		public AnswersFilteredById Where(Func<IAnswersIdQuestionPostingUserPageFromDateFilter, FilterIds> f)
 		{
 			return new AnswersFilteredById(this.Url, f(new AnswersInterfacesImpl()));
 		}
 
+		/// <summary>
+		/// Wheres the specified f.
+		/// </summary>
+		/// <param name="f">The f.</param>
+		/// <returns></returns>
 		public AnswersFilteredByQuestionId Where(Func<IAnswersIdQuestionPostingUserPageFromDateFilter, FilterQuestionIds> f)
 		{
 			return new AnswersFilteredByQuestionId(this.Url, f(new AnswersInterfacesImpl()));
 		}
 
+		/// <summary>
+		/// Wheres the specified f.
+		/// </summary>
+		/// <param name="f">The f.</param>
+		/// <returns></returns>
 		public AnswersFilteredByUserId Where(Func<IAnswersIdQuestionPostingUserPageFromDateFilter, FilterUserIds> f)
 		{
 			return new AnswersFilteredByUserId(this.Url, f(new AnswersInterfacesImpl()));

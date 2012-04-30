@@ -8,9 +8,9 @@ namespace ExchangeLINQ.Applications
 	public class ApplicationsEntry : State
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="AccessTokensEntry"/> class.
+		/// Initializes a new instance of the <see cref="ApplicationsEntry"/> class.
 		/// </summary>
-		/// <param name="oauth">The oauth.</param>
+		/// <param name="url">The URL.</param>
 		internal ApplicationsEntry(ExchangeUrl url)
 		{
 			this.Url = url;
@@ -19,7 +19,7 @@ namespace ExchangeLINQ.Applications
 		/// <summary>
 		/// Helper function to filter tokens based on a set of ids.
 		/// </summary>
-		/// <param name="tokenSelector">The ids.</param>
+		/// <param name="f">The f.</param>
 		/// <returns></returns>
 		public ApplicationsFilteredByTokens Where(Func<IApplicationsToken, FilterTokens> f)
 		{

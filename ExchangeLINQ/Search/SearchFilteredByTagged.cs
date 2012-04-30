@@ -3,25 +3,22 @@ using ExchangeLINQ.Common;
 using ExchangeLINQ.Common.State;
 using ExchangeLINQ.Complex;
 using ExchangeLINQ.Models;
+using System.Diagnostics.Contracts;
 
 namespace ExchangeLINQ.Search
 {
 	public class SearchFilteredByTagged : ProcessorState<Question>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="AccessTokensFilteredByTokens"/> class.
+		/// Initializes a new instance of the <see cref="SearchFilteredByTagged"/> class.
 		/// </summary>
-		/// <param name="tokens">The tokens.</param>
+		/// <param name="url">The URL.</param>
+		/// <param name="tags">The tags.</param>
 		internal SearchFilteredByTagged(ExchangeUrl url, FilterTags tags)
 		{
-			if (url == null)
-			{
-				throw new ArgumentNullException("url");
-			}
-			if (tags == null)
-			{
-				throw new ArgumentNullException("tags");
-			}
+			Contract.Requires(url == null);
+			Contract.Requires(tags == null);
+
 			this.Url = url;
 			this.Url.AddQueryOption("tagged", String.Join(";",tags.Value));
 		}

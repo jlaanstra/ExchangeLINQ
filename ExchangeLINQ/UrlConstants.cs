@@ -39,7 +39,7 @@ namespace ExchangeLINQ
 		public const string SuggestedEditsUrl =							"/suggested-edits";
 		public const string SuggestedEditsByIdUrl =						"/suggested-edits/{0}";
 		public const string TagsUrl =									"/tags";
-		public const string TagsByIdUrl =								"/tags/{tags}/info";
+		public const string TagsByNameUrl =								"/tags/{0}/info";
 		public const string ModeratorOnlyTagsUrl =						"/tags/moderator-only";
 		public const string RequiredTagsUrl =							"/tags/required";
 		public const string AllSynonymsTagsUrl =						"/tags/synonyms";
@@ -58,8 +58,8 @@ namespace ExchangeLINQ
 		public const string BadgesByMeUrl =								"/me/badges";
 		public const string CommentsByUserIdUrl =						"/users/{0}/comments";
 		public const string CommentsByMeUrl =							"/me/comments";
-		public const string CommentsToUserIdByUserIdUrl =				"/users/{0}/comments/{toid}";
-		public const string CommentsToUserIdByMeUrl =					"/me/comments/{toid}";
+		public const string CommentsToUserIdByUserIdUrl =				"/users/{0}/comments/{1}";
+		public const string CommentsToUserIdByMeUrl =					"/me/comments/{0}";
 		public const string FavoritesByUserIdUrl =						"/users/{0}/favorites";
 		public const string FavoritesByMeUrl =							"/me/favorites";
 		public const string MentionedByUserIdUrl =						"/users/{0}/mentioned";
@@ -83,9 +83,9 @@ namespace ExchangeLINQ
 		public const string TagsByUserIdUrl =							"/users/{0}/tags";
 		public const string TagsByMeUrl =								"/me/tags";
 		public const string TopAnswersByTagByUserIdUrl =				"/users/{0}/tags/{1}/top-answers";
-		public const string TopAnswersByTagByMeUrl =					"/me/tags/{tags}/top-answers";
+		public const string TopAnswersByTagByMeUrl =					"/me/tags/{0}/top-answers";
 		public const string TopQuestionByTagByUserIdUrl =				"/users/{0}/tags/{1}/top-questions";
-		public const string TopQuestionByTagByMeUrl =					"/me/tags/{tags}/top-questions";
+		public const string TopQuestionByTagByMeUrl =					"/me/tags/{0}/top-questions";
 		public const string TimelineByUserIdUrl =						"/users/{0}/timeline";
 		public const string TimelineByMeUrl =							"/me/timeline";
 		public const string TopAnswerTagsByUserIdUrl =					"/users/{0}/top-answer-tags";
@@ -98,9 +98,9 @@ namespace ExchangeLINQ
 		public const string InboxByMeUrl =								"/me/inbox";
 		public const string UnreadInboxByUserIdUrl =					"/users/{0}/inbox/unread";
 		public const string UnreadInboxByMeUrl =						"/me/inbox/unread";
-		public const string InvalidateAccessTokensByNameUrl =			"/access-tokens/{accessTokens}/invalidate";
-		public const string AccessTokensByNameUrl =						"/access-tokens/{accessTokens}";
-		public const string DeauthenticateAppsByAccessTokensUrl =		"/apps/{accessTokens}/de-authenticate";
+		public const string InvalidateAccessTokensByNameUrl =			"/access-tokens/{0}/invalidate";
+		public const string AccessTokensByNameUrl =						"/access-tokens/{0}";
+		public const string DeauthenticateAppsByAccessTokensUrl =		"/apps/{0}/de-authenticate";
 		public const string ErrorsUrl =									"/errors";
 		public const string ErrorsByIdUrl =								"/errors/{0}";
 		public const string CreateFilterUrl =							"/filters/create";
@@ -108,7 +108,7 @@ namespace ExchangeLINQ
 		public const string InboxUrl =									"/inbox";
 		public const string InboxUnreadUrl =							"/inbox/unread";
 		public const string SitesUrl =									"/sites";
-		public const string AssociatedUsersByIdUrl =						"/users/{0}/associated";
+		public const string AssociatedUsersByIdUrl =					"/users/{0}/associated";
 		public const string AssociatedMeUrl =							"/me/associated";
 	}
 }

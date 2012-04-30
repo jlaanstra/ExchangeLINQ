@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Diagnostics.Contracts;
 
 #if SILVERLIGHT || WINDOWSPHONE
 using ExchangeLINQ.GZip;
@@ -11,6 +12,7 @@ namespace ExchangeLINQ.Common.Processor
 	{
 		protected WebRequest CreateWebRequest(Uri url)
 		{
+			Contract.Requires(url != null);
 #if SILVERLIGHT || WINDOWSPHONE
 			return new GZipHttpWebRequest(url);
 #else

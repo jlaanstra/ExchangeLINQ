@@ -32,6 +32,7 @@ namespace ExchangeLINQ.Common.Processor
 		public IDisposable Subscribe(IObserver<ResponseWrapper<T>> observer, string url)
 		{
 			Contract.Requires(url != null);
+			Contract.Requires(observer != null);
 
 			IObservable<ResponseWrapper<T>> observable = from req in Observable.Return(this.CreateWebRequest(new Uri(url)))
 														 from resp in Observable.FromAsyncPattern<WebResponse>(req.BeginGetResponse, req.EndGetResponse)()

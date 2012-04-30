@@ -11,9 +11,10 @@ namespace ExchangeLINQ.Answers
 		private FilterMe me;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="AccessTokensFilteredByTokens"/> class.
+		/// Initializes a new instance of the <see cref="AnswersFilteredByMe"/> class.
 		/// </summary>
-		/// <param name="tokens">The tokens.</param>
+		/// <param name="url">The URL.</param>
+		/// <param name="me">Me.</param>
 		internal AnswersFilteredByMe(ExchangeUrl url, FilterMe me)
 		{
 			this.Url = url;

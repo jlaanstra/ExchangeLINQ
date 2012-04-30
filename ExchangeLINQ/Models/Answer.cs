@@ -57,7 +57,7 @@ namespace ExchangeLINQ.Models
 	
 		[JsonProperty("comments")]
 		public IEnumerable<Comment> Comments { get; set; }
-		
+
 		[JsonProperty("link")]
 		public string Url { get; set; }
 	}

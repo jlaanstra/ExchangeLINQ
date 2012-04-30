@@ -46,6 +46,7 @@ namespace ExchangeLINQ.Common.Processor
 		public IDisposable SubscribeSingle(IObserver<T> observer, string url)
 		{
 			Contract.Requires(url != null);
+			Contract.Requires(observer != null);
 
 			IObservable<T> observable = from req in Observable.Return(this.CreateWebRequest(new Uri(url)))
 										from resp in Observable.FromAsyncPattern<WebResponse>(req.BeginGetResponse, req.EndGetResponse)()
@@ -63,6 +64,7 @@ namespace ExchangeLINQ.Common.Processor
 		public IDisposable SubscribeList(IObserver<T> observer, string url)
 		{
 			Contract.Requires(url != null);
+			Contract.Requires(observer != null);
 
 			IObservable<T> observable = from req in Observable.Return(this.CreateWebRequest(new Uri(url)))
 											from resp in Observable.FromAsyncPattern<WebResponse>(req.BeginGetResponse, req.EndGetResponse)()

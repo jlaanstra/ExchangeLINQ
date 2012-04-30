@@ -1,21 +1,20 @@
 ﻿using System;
 using ExchangeLINQ.Common;
 using ExchangeLINQ.Common.State;
+using System.Diagnostics.Contracts;
 
 namespace ExchangeLINQ.Search
 {
 	public class SearchEntry : State
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="AccessTokensEntry"/> class.
+		/// Initializes a new instance of the <see cref="SearchEntry"/> class.
 		/// </summary>
-		/// <param name="oauth">The oauth.</param>
+		/// <param name="url">The URL.</param>
 		internal SearchEntry(ExchangeUrl url)
 		{
-			if(url == null)
-			{
-				throw new ArgumentNullException("url");
-			}
+			Contract.Requires(url != null);
+
 			this.Url = url;
 			this.Url.QueryUrl = UrlConstants.SearchUrl;
 		}

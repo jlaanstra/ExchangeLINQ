@@ -13,7 +13,7 @@ namespace ExchangeLINQ.Common.Types
 		/// <summary>
 		/// Method added to hook into the c# params syntax.
 		/// </summary>
-		/// <param name="tokens">The tokens.</param>
+		/// <param name="ids">The ids.</param>
 		/// <returns></returns>
 		public Filter In(params ClrType[] ids)
 		{
@@ -21,9 +21,9 @@ namespace ExchangeLINQ.Common.Types
 		}
 
 		/// <summary>
-		/// Specified to enable intellisense in LINQ query.
+		/// Ins the specified ids.
 		/// </summary>
-		/// <param name="tokens">The tokens.</param>
+		/// <param name="ids">The ids.</param>
 		/// <returns></returns>
 		public Filter In(IEnumerable<ClrType> ids)
 		{

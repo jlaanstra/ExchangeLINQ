@@ -208,12 +208,9 @@
     <Compile Include="Complex\Interfaces.cs" />
     <Compile Include="Complex\InterfacesImpl.cs" />
     <Compile Include="Complex\OrderBy.cs" />
-    <Compile Include="Context\INetworkStackExchangeContext.cs" />
     <Compile Include="Context\IOAuth.cs" />
-    <Compile Include="Context\ISite.cs" />
-    <Compile Include="Context\ISiteStackExchangeContext.cs" />
-    <Compile Include="Context\NetworkStackExchangeContext.cs" />
-    <Compile Include="Context\SiteStackExchangeContext.cs" />
+    <Compile Include="Context\IStackExchangeContext.cs" />
+    <Compile Include="Context\StackExchangeContextImpl.cs" />
     <Compile Include="Converters\ColorConverter.cs" />
     <Compile Include="Converters\HtmlDecodeConverter.cs" />
     <Compile Include="Converters\UnixTimestampConverter.cs" />
@@ -221,6 +218,7 @@
     <Compile Include="Errors\ErrorsFilteredById.cs" />
     <Compile Include="Errors\ErrorsFilters.cs" />
     <Compile Include="EvaluatorExtensions.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="GZip\GZipHttpWebRequest.cs" />
     <Compile Include="GZip\GZipHttpWebResponse.cs" />
     <Compile Include="GZip\ZLib\Crc32.cs" />

@@ -4,17 +4,20 @@ using ExchangeLINQ.Common.State;
 using ExchangeLINQ.Complex;
 using ExchangeLINQ.Context;
 using ExchangeLINQ.Models;
+using System.Diagnostics.Contracts;
 
 namespace ExchangeLINQ.Comments
 {
 	public class CommentsEntry : ProcessorState<Comment>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="AccessTokensEntry"/> class.
+		/// Initializes a new instance of the <see cref="CommentsEntry"/> class.
 		/// </summary>
-		/// <param name="oauth">The oauth.</param>
+		/// <param name="url">The URL.</param>
 		internal CommentsEntry(ExchangeUrl url)
 		{
+			Contract.Requires(url != null);
+
 			this.Url = url;
 			this.Url.QueryUrl = UrlConstants.CommentsUrl;
 		}

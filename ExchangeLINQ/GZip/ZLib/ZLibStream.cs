@@ -638,15 +638,15 @@ namespace ExchangeLINQ.GZip.ZLib
 
 
 #if NOT
-        public int Read()
-        {
-            if (Read(_buf1, 0, 1) == 0)
-                return 0;
-            // calculate CRC after reading
-            if (crc!=null)
-                crc.SlurpBlock(_buf1,0,1);
-            return (_buf1[0] & 0xFF);
-        }
+		public int Read()
+		{
+			if (Read(_buf1, 0, 1) == 0)
+				return 0;
+			// calculate CRC after reading
+			if (crc!=null)
+				crc.SlurpBlock(_buf1,0,1);
+			return (_buf1[0] & 0xFF);
+		}
 #endif
 
 		private bool nomoreinput = false;

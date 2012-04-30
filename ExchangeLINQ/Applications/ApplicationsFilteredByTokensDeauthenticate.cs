@@ -9,8 +9,9 @@ namespace ExchangeLINQ.Applications
 	public class ApplicationsFilteredByTokensDeauthenticate : ProcessorState<AccessToken>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="SEApplicationsFilteredByTokensDeauthenticate"/> class.
+		/// Initializes a new instance of the <see cref="ApplicationsFilteredByTokensDeauthenticate"/> class.
 		/// </summary>
+		/// <param name="url">The URL.</param>
 		/// <param name="tokens">The tokens.</param>
 		internal ApplicationsFilteredByTokensDeauthenticate(ExchangeUrl url, FilterTokens tokens)
 		{

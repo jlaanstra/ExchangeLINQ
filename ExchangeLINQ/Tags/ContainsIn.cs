@@ -8,9 +8,9 @@ namespace ExchangeLINQ.Tags
 	public class ContainsIn
 	{
 		/// <summary>
-		/// Method added to hook into the c# params syntax.
+		/// Ins the specified ids.
 		/// </summary>
-		/// <param name="tokens">The tokens.</param>
+		/// <param name="ids">The ids.</param>
 		/// <returns></returns>
 		public FilterNames In(params string[] ids)
 		{
@@ -20,7 +20,7 @@ namespace ExchangeLINQ.Tags
 		/// <summary>
 		/// Specified to enable intellisense in LINQ query.
 		/// </summary>
-		/// <param name="tokens">The tokens.</param>
+		/// <param name="ids">The ids.</param>
 		/// <returns></returns>
 		public FilterNames In(IEnumerable<string> ids)
 		{
@@ -30,7 +30,7 @@ namespace ExchangeLINQ.Tags
 		/// <summary>
 		/// Specified to enable intellisense in LINQ query.
 		/// </summary>
-		/// <param name="tokens">The tokens.</param>
+		/// <param name="arg">The arg.</param>
 		/// <returns></returns>
 		public FilterNameContains Contains(string arg)
 		{

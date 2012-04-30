@@ -1,18 +1,22 @@
 ﻿using System;
 using ExchangeLINQ.Common;
 using ExchangeLINQ.Common.State;
+using System.Diagnostics.Contracts;
 
 namespace ExchangeLINQ.Complex
 {
 	public class OrderBy<T> : ProcessorState<T>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="OrderBy"/> class.
+		/// Initializes a new instance of the <see cref="OrderBy&lt;T&gt;"/> class.
 		/// </summary>
 		/// <param name="url">The URL.</param>
 		/// <param name="orderby">The orderby.</param>
 		internal OrderBy(ExchangeUrl url, FilterOrderBy orderby)
 		{
+			Contract.Requires(url != null);
+			Contract.Requires(orderby != null);
+
 			this.Url = url;
 			this.Url.AddQueryOption("sort", orderby.Value);
 			this.Url.AddQueryOption("order", "asc");

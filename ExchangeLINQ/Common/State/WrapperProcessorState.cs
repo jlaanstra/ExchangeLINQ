@@ -16,7 +16,7 @@ namespace ExchangeLINQ.Common.State
 			this.Url = url;
 		}
 
-		// <summary>
+		/// <summary>
 		/// Selects the specified f.
 		/// </summary>
 		/// <param name="f">The f.</param>

@@ -3,6 +3,7 @@ using ExchangeLINQ.Common;
 using ExchangeLINQ.Common.State;
 using ExchangeLINQ.Complex;
 using ExchangeLINQ.Models;
+using System.Diagnostics.Contracts;
 
 namespace ExchangeLINQ.Inbox
 {
@@ -11,9 +12,11 @@ namespace ExchangeLINQ.Inbox
 		/// <summary>
 		/// Initializes a new instance of the <see cref="InboxFilteredByUnread"/> class.
 		/// </summary>
-		/// <param name="id">The id.</param>
+		/// <param name="url">The URL.</param>
 		internal InboxFilteredByUnread(ExchangeUrl url)
 		{
+			Contract.Requires(url != null);
+
 			this.Url = url;
 			this.Url.QueryUrl = UrlConstants.InboxUnreadUrl;
 		}

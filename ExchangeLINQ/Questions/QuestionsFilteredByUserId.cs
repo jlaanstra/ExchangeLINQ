@@ -11,9 +11,10 @@ namespace ExchangeLINQ.Questions
 		private FilterUserIds ids;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="AccessTokensFilteredByTokens"/> class.
+		/// Initializes a new instance of the <see cref="QuestionsFilteredByUserId"/> class.
 		/// </summary>
-		/// <param name="tokens">The tokens.</param>
+		/// <param name="url">The URL.</param>
+		/// <param name="ids">The ids.</param>
 		internal QuestionsFilteredByUserId(ExchangeUrl url, FilterUserIds ids)
 		{
 			this.Url = url;

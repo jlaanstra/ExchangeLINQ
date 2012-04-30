@@ -9,10 +9,12 @@ namespace ExchangeLINQ.Answers
 	public class AnswersFilteredByUserId : ProcessorState<Answer>
 	{
 		private FilterUserIds ids;
+
 		/// <summary>
-		/// Initializes a new instance of the <see cref="AccessTokensFilteredByTokens"/> class.
+		/// Initializes a new instance of the <see cref="AnswersFilteredByUserId"/> class.
 		/// </summary>
-		/// <param name="tokens">The tokens.</param>
+		/// <param name="url">The URL.</param>
+		/// <param name="ids">The ids.</param>
 		internal AnswersFilteredByUserId(ExchangeUrl url, FilterUserIds ids)
 		{
 			this.Url = url;

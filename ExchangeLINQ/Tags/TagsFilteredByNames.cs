@@ -14,7 +14,7 @@ namespace ExchangeLINQ.Tags
 		internal TagsFilteredByNames(ExchangeUrl url, FilterNames names)
 		{
 			this.Url = url;
-			this.Url.QueryUrl = string.Format(UrlConstants.TagsByIdUrl, string.Join(";", names.Value));
+			this.Url.QueryUrl = string.Format(UrlConstants.TagsByNameUrl, string.Join(";", names.Value));
 		}
 
 		#region Complex

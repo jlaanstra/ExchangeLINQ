@@ -9,9 +9,10 @@ namespace ExchangeLINQ.Badges
 	public class BadgesFilteredByName : ProcessorState<Badge>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="BadgesFilteredById"/> class.
+		/// Initializes a new instance of the <see cref="BadgesFilteredByName"/> class.
 		/// </summary>
-		/// <param name="tokens">The tokens.</param>
+		/// <param name="url">The URL.</param>
+		/// <param name="name">The name.</param>
 		internal BadgesFilteredByName(ExchangeUrl url, FilterName name)
 		{
 			this.Url = url;

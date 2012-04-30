@@ -3,17 +3,20 @@ using ExchangeLINQ.Common;
 using ExchangeLINQ.Common.State;
 using ExchangeLINQ.Complex;
 using ExchangeLINQ.Models;
+using System.Diagnostics.Contracts;
 
 namespace ExchangeLINQ.Badges
 {
 	public class BadgesFilteredByTagBased : ProcessorState<Badge>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="BadgesFilteredById"/> class.
+		/// Initializes a new instance of the <see cref="BadgesFilteredByTagBased"/> class.
 		/// </summary>
-		/// <param name="tokens">The tokens.</param>
+		/// <param name="url">The URL.</param>
 		internal BadgesFilteredByTagBased(ExchangeUrl url)
 		{
+			Contract.Requires(url != null);
+
 			this.Url = url;
 			this.Url.QueryUrl = UrlConstants.TagBasedBadgesUrl;
 		}

@@ -3,25 +3,22 @@ using ExchangeLINQ.Common;
 using ExchangeLINQ.Common.State;
 using ExchangeLINQ.Complex;
 using ExchangeLINQ.Models;
+using System.Diagnostics.Contracts;
 
 namespace ExchangeLINQ.Search
 {
 	public class SearchFilteredByInTitle : ProcessorState<Question>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="AccessTokensFilteredByTokens"/> class.
+		/// Initializes a new instance of the <see cref="SearchFilteredByInTitle"/> class.
 		/// </summary>
-		/// <param name="tokens">The tokens.</param>
+		/// <param name="url">The URL.</param>
+		/// <param name="title">The title.</param>
 		internal SearchFilteredByInTitle(ExchangeUrl url, FilterTitle title)
 		{
-			if (url == null)
-			{
-				throw new ArgumentNullException("url");
-			}
-			if (title == null)
-			{
-				throw new ArgumentNullException("title");
-			}
+			Contract.Requires(url == null);
+			Contract.Requires(title == null);
+
 			this.Url = url;
 			this.Url.AddQueryOption("intitle", title.Value);
 		}

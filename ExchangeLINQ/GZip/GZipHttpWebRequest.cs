@@ -11,13 +11,11 @@ namespace ExchangeLINQ.GZip
 	/// This is really just a wrapper class for HttpWebRequest that adds the gzip header,
 	/// and checks the response for gzip. If it's gzip'ed, it will uncompress the stream.
 	/// </summary>
-	/// <remarks>
-	/// This class is only used by the <see cref="WebRequestCreator"/>.
-	/// </remarks>
 	internal class GZipHttpWebRequest : HttpWebRequest
 	{
 		private System.Net.HttpWebRequest internalWebRequest;
 
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
 		public GZipHttpWebRequest(Uri uri)
 		{
 			internalWebRequest = System.Net.WebRequest.CreateHttp(uri);

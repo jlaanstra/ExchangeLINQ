@@ -9,9 +9,9 @@ namespace ExchangeLINQ.Badges
 	public class BadgesEntry : ProcessorState<Badge>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="AccessTokensEntry"/> class.
+		/// Initializes a new instance of the <see cref="BadgesEntry"/> class.
 		/// </summary>
-		/// <param name="oauth">The oauth.</param>
+		/// <param name="url">The URL.</param>
 		internal BadgesEntry(ExchangeUrl url)
 		{
 			this.Url = url;

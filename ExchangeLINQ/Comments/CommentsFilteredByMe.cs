@@ -2,6 +2,7 @@
 using ExchangeLINQ.Common;
 using ExchangeLINQ.Common.State;
 using ExchangeLINQ.Models;
+using System.Diagnostics.Contracts;
 
 namespace ExchangeLINQ.Comments
 {
@@ -11,9 +12,10 @@ namespace ExchangeLINQ.Comments
 		/// Initializes a new instance of the <see cref="CommentsFilteredByMe"/> class.
 		/// </summary>
 		/// <param name="url">The URL.</param>
-		/// <param name="ids">The ids.</param>
 		internal CommentsFilteredByMe(ExchangeUrl url)
 		{
+			Contract.Requires(url != null);
+
 			this.Url = url;
 			this.Url.QueryUrl = UrlConstants.CommentsByMeUrl;
 		}

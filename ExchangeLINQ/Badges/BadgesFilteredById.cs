@@ -13,7 +13,8 @@ namespace ExchangeLINQ.Badges
 		/// <summary>
 		/// Initializes a new instance of the <see cref="BadgesFilteredById"/> class.
 		/// </summary>
-		/// <param name="tokens">The tokens.</param>
+		/// <param name="url">The URL.</param>
+		/// <param name="ids">The ids.</param>
 		internal BadgesFilteredById(ExchangeUrl url, FilterIds ids)
 		{
 			this.Url = url;

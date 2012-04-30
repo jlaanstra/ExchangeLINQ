@@ -9,9 +9,10 @@ namespace ExchangeLINQ.Questions
 	public class QuestionsFilteredByLinksTo : ProcessorState<Question>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="AccessTokensFilteredByTokens"/> class.
+		/// Initializes a new instance of the <see cref="QuestionsFilteredByLinksTo"/> class.
 		/// </summary>
-		/// <param name="tokens">The tokens.</param>
+		/// <param name="url">The URL.</param>
+		/// <param name="filter">The filter.</param>
 		internal QuestionsFilteredByLinksTo(ExchangeUrl url, FilterLinksToId filter)
 		{
 			this.Url = url;

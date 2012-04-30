@@ -3,6 +3,7 @@ using ExchangeLINQ.Common;
 using ExchangeLINQ.Common.State;
 using ExchangeLINQ.Complex;
 using ExchangeLINQ.Models;
+using System.Diagnostics.Contracts;
 
 namespace ExchangeLINQ.Questions
 {
@@ -11,19 +12,15 @@ namespace ExchangeLINQ.Questions
 		private FilterTags tags;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="AccessTokensFilteredByTokens"/> class.
+		/// Initializes a new instance of the <see cref="QuestionsFilteredByTag"/> class.
 		/// </summary>
-		/// <param name="tokens">The tokens.</param>
+		/// <param name="url">The URL.</param>
+		/// <param name="tags">The tags.</param>
 		internal QuestionsFilteredByTag(ExchangeUrl url, FilterTags tags)
 		{
-			if (url == null)
-			{
-				throw new ArgumentNullException("url");
-			}
-			if (tags == null)
-			{
-				throw new ArgumentNullException("tags");
-			}
+			Contract.Requires(url != null);
+			Contract.Requires(tags != null);
+
 			this.Url = url;
 			this.tags = tags;
 			this.Url.AddQueryOption("tagged", String.Join(";", tags.Value));

@@ -3,17 +3,22 @@ using ExchangeLINQ.Common;
 using ExchangeLINQ.Common.State;
 using ExchangeLINQ.Complex;
 using ExchangeLINQ.Models;
+using System.Diagnostics.Contracts;
 
 namespace ExchangeLINQ.Questions
 {
 	public class QuestionsFilteredByNoAnswersTag : ProcessorState<Question>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="AccessTokensFilteredByTokens"/> class.
+		/// Initializes a new instance of the <see cref="QuestionsFilteredByNoAnswersTag"/> class.
 		/// </summary>
-		/// <param name="tokens">The tokens.</param>
+		/// <param name="url">The URL.</param>
+		/// <param name="tags">The tags.</param>
 		internal QuestionsFilteredByNoAnswersTag(ExchangeUrl url, FilterTags tags)
 		{
+			Contract.Requires(url != null);
+			Contract.Requires(tags != null);
+
 			this.Url = url;
 			this.Url.AddQueryOption("tagged", String.Join(";", tags.Value));
 		}

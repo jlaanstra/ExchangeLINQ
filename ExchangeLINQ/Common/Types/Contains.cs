@@ -15,7 +15,7 @@ namespace ExchangeLINQ.Common.Types
 		/// <summary>
 		/// Specified to enable intellisense in LINQ query.
 		/// </summary>
-		/// <param name="tokens">The tokens.</param>
+		/// <param name="arg">The arg.</param>
 		/// <returns></returns>
 		public Filter Contains(ClrType arg)
 		{

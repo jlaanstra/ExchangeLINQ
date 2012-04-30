@@ -9,11 +9,10 @@ namespace ExchangeLINQ.Users
 {
 	public class UsersEntry : ProcessorState<User>
 	{
-
 		/// <summary>
-		/// Initializes a new instance of the <see cref="AccessTokensEntry"/> class.
+		/// Initializes a new instance of the <see cref="UsersEntry"/> class.
 		/// </summary>
-		/// <param name="oauth">The oauth.</param>
+		/// <param name="url">The URL.</param>
 		internal UsersEntry(ExchangeUrl url)
 		{
 			this.Url = url;

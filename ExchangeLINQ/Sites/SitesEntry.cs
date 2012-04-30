@@ -11,7 +11,7 @@ namespace ExchangeLINQ.Sites
 		/// <summary>
 		/// Initializes a new instance of the <see cref="SitesEntry"/> class.
 		/// </summary>
-		/// <param name="oauth">The oauth.</param>
+		/// <param name="url">The URL.</param>
 		internal SitesEntry(ExchangeUrl url)
 		{
 			this.Url = url;

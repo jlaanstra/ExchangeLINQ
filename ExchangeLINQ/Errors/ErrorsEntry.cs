@@ -3,6 +3,7 @@ using ExchangeLINQ.Common;
 using ExchangeLINQ.Common.State;
 using ExchangeLINQ.Common.Types;
 using ExchangeLINQ.Models;
+using System.Diagnostics.Contracts;
 
 namespace ExchangeLINQ.Errors
 {
@@ -11,9 +12,11 @@ namespace ExchangeLINQ.Errors
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ErrorsEntry"/> class.
 		/// </summary>
-		/// <param name="token">The token.</param>
+		/// <param name="url">The URL.</param>
 		internal ErrorsEntry(ExchangeUrl url)
 		{
+			Contract.Requires(url != null);
+
 			this.Url = url;
 			this.Url.QueryUrl = UrlConstants.ErrorsUrl;
 		}
