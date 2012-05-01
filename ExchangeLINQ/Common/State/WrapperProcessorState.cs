@@ -5,7 +5,7 @@ using ExchangeLINQ.Models;
 
 namespace ExchangeLINQ.Common.State
 {
-	public class WrapperProcessorState<T> : State, IEvaluator<ResponseWrapper<T>>
+	public class WrapperProcessorState<T> : State, IStackObservable<ResponseWrapper<T>>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="WrapperProcessorState&lt;T&gt;"/> class.
@@ -21,7 +21,7 @@ namespace ExchangeLINQ.Common.State
 		/// </summary>
 		/// <param name="f">The f.</param>
 		/// <returns></returns>
-		public IEvaluator<ResponseWrapper<T>> Select(Func<Empty, Empty> f)
+		public IStackObservable<ResponseWrapper<T>> Select(Func<Empty, Empty> f)
 		{
 			return this;
 		}
@@ -40,7 +40,7 @@ namespace ExchangeLINQ.Common.State
 		/// Transform the IEvaluator instance into an Observable.
 		/// </summary>
 		/// <returns></returns>
-		public IObservable<ResponseWrapper<T>> AsObservable()
+		public IObservable<ResponseWrapper<T>> ToObservable()
 		{
 			return Observable.Create<ResponseWrapper<T>>(observer => this.Subscribe(observer));
 		}

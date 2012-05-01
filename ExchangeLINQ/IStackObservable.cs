@@ -2,10 +2,10 @@
 
 namespace ExchangeLINQ
 {
-	public interface IEvaluator<T>
+	public interface IStackObservable<T>
 	{
 		IDisposable Subscribe(IObserver<T> observer);
 
-		IObservable<T> AsObservable();
+		IObservable<T> ToObservable();
 	}
 }

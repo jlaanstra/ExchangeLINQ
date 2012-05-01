@@ -215,7 +215,6 @@
     <Compile Include="Errors\ErrorsEntry.cs" />
     <Compile Include="Errors\ErrorsFilteredById.cs" />
     <Compile Include="Errors\ErrorsFilters.cs" />
-    <Compile Include="EvaluatorExtensions.cs" />
     <Compile Include="GZip\GZipHttpWebRequest.cs" />
     <Compile Include="GZip\GZipHttpWebResponse.cs" />
     <Compile Include="GZip\ZLib\Crc32.cs" />
@@ -227,14 +226,14 @@
     <Compile Include="GZip\ZLib\ZLibCodec.cs" />
     <Compile Include="GZip\ZLib\ZLibConstants.cs" />
     <Compile Include="GZip\ZLib\ZLibStream.cs" />
-    <Compile Include="IEvaluator.cs" />
     <Compile Include="Inbox\InboxEntry.cs" />
     <Compile Include="Inbox\InboxFilteredByUnread.cs" />
     <Compile Include="Inbox\InboxFilters.cs" />
     <Compile Include="Inbox\InboxInterfaces.cs" />
     <Compile Include="Inbox\InboxInterfacesImpl.cs" />
     <Compile Include="Info\InfoEntry.cs" />
-    <Compile Include="IWrappedEvaluator.cs" />
+    <Compile Include="IStackObservable.cs" />
+    <Compile Include="IWrappedStackObservable.cs" />
     <Compile Include="Models\AccessToken.cs" />
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\Badge.cs" />
@@ -287,6 +286,7 @@
     <Compile Include="Search\SearchOrderByDescending.cs" />
     <Compile Include="Sites\SitesEntry.cs" />
     <Compile Include="StackExchangeContext.cs" />
+    <Compile Include="StackObservableExtensions.cs" />
     <Compile Include="Stubs.cs" />
     <Compile Include="Tags\ContainsIn.cs" />
     <Compile Include="Tags\TagsEntry.cs" />

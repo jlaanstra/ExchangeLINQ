@@ -3,10 +3,10 @@ using System.Reactive;
 
 namespace ExchangeLINQ
 {
-	public static class EvaluatorExtensions
+	public static class StackObservableExtensions
 	{
 		// Methods
-		public static IDisposable Subscribe<T>(this IEvaluator<T> source)
+		public static IDisposable Subscribe<T>(this IStackObservable<T> source)
 		{
 			if (source == null)
 			{
@@ -15,7 +15,7 @@ namespace ExchangeLINQ
 			return source.Subscribe<T>(Stubs<T>.Ignore, Stubs.Throw, Stubs.Nop);
 		}
 
-		public static IDisposable Subscribe<T>(this IEvaluator<T> source, Action<T> onNext)
+		public static IDisposable Subscribe<T>(this IStackObservable<T> source, Action<T> onNext)
 		{
 			if (source == null)
 			{
@@ -28,7 +28,7 @@ namespace ExchangeLINQ
 			return source.Subscribe<T>(onNext, Stubs.Throw, Stubs.Nop);
 		}
 
-		public static IDisposable Subscribe<T>(this IEvaluator<T> source, Action<T> onNext, Action<Exception> onError)
+		public static IDisposable Subscribe<T>(this IStackObservable<T> source, Action<T> onNext, Action<Exception> onError)
 		{
 			if (source == null)
 			{
@@ -45,7 +45,7 @@ namespace ExchangeLINQ
 			return source.Subscribe<T>(onNext, onError, Stubs.Nop);
 		}
 
-		public static IDisposable Subscribe<T>(this IEvaluator<T> source, Action<T> onNext, Action onCompleted)
+		public static IDisposable Subscribe<T>(this IStackObservable<T> source, Action<T> onNext, Action onCompleted)
 		{
 			if (source == null)
 			{
@@ -62,7 +62,7 @@ namespace ExchangeLINQ
 			return source.Subscribe<T>(onNext, Stubs.Throw, onCompleted);
 		}
 
-		public static IDisposable Subscribe<T>(this IEvaluator<T> source, Action<T> onNext, Action<Exception> onError, Action onCompleted)
+		public static IDisposable Subscribe<T>(this IStackObservable<T> source, Action<T> onNext, Action<Exception> onError, Action onCompleted)
 		{
 			if (source == null)
 			{
