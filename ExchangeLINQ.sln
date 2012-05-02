@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeLINQ.NET4", "ExchangeLINQ\ExchangeLINQ.NET4.csproj", "{B6B66828-83DC-465E-B65B-EA153BA2938A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeLinq.NET4", "ExchangeLinq\ExchangeLinq.NET4.csproj", "{B6B66828-83DC-465E-B65B-EA153BA2938A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeLINQ.SL4", "ExchangeLINQ\ExchangeLINQ.SL4.csproj", "{DDCF4944-0DED-404E-B678-D0B115D1B3DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeLinq.SL4", "ExchangeLinq\ExchangeLinq.SL4.csproj", "{DDCF4944-0DED-404E-B678-D0B115D1B3DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeLINQ.SL5", "ExchangeLINQ\ExchangeLINQ.SL5.csproj", "{C83AA7CB-62BF-433C-AAB0-384E8ACA3FF5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeLinq.SL5", "ExchangeLinq\ExchangeLinq.SL5.csproj", "{C83AA7CB-62BF-433C-AAB0-384E8ACA3FF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeLINQ.WP71", "ExchangeLINQ\ExchangeLINQ.WP71.csproj", "{D80E0015-F0E1-4BF0-86C7-FD7C1660C502}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeLinq.WP71", "ExchangeLinq\ExchangeLinq.WP71.csproj", "{D80E0015-F0E1-4BF0-86C7-FD7C1660C502}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{675861DC-9F6A-4270-A78D-74173779B5B8}"
 	ProjectSection(SolutionItems) = preProject
