@@ -8,19 +8,7 @@ namespace ExchangeLINQ.AccessTokens
 {
 	public class AccessTokensFilteredByTokens : ProcessorState<AccessToken>
 	{
-		private FilterTokens tokens;
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="AccessTokensFilteredByTokens"/> class.
-		/// </summary>
-		/// <param name="tokens">The tokens.</param>
-		internal AccessTokensFilteredByTokens(ExchangeUrl url, FilterTokens tokens)
-		{
-			this.Url = url;
-			this.Url.QueryUrl = string.Format(UrlConstants.AccessTokensByNameUrl, String.Join(";", tokens.Value));
-
-			this.tokens = tokens;
-		}
+		public FilterTokens Tokens { get; set; }
 
 		/// <summary>
 		/// Helper function to filter tokens based on a set of ids.
@@ -29,7 +17,8 @@ namespace ExchangeLINQ.AccessTokens
 		/// <returns></returns>
 		public AccessTokensFilteredByTokensInvalidate Where(Func<IAccessTokensPageInvalidate, FilterInvalidate> tokenSelector)
 		{
-			return new AccessTokensFilteredByTokensInvalidate(this.Url, this.tokens);
+			this.Url.QueryUrl = string.Format(UrlConstants.InvalidateAccessTokensByNameUrl, String.Join(";", Tokens.Value));
+			return new AccessTokensFilteredByTokensInvalidate() { Url = this.Url };
 		}
 
 		public FilteredByPage<AccessToken> Where(Func<IAccessTokensPageInvalidate, FilterPage> f)

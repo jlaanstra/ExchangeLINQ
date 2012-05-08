@@ -9,18 +9,6 @@ namespace ExchangeLINQ.Inbox
 {
 	public class InboxEntry : ProcessorState<InboxItem>
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="InboxEntry"/> class.
-		/// </summary>
-		/// <param name="url">The URL.</param>
-		internal InboxEntry(ExchangeUrl url)
-		{
-			Contract.Requires(url != null);
-
-			this.Url = url;
-			this.Url.QueryUrl = UrlConstants.InboxUrl;
-		}
-
 		public InboxFilteredByUnread Where(Func<IInboxUnreadPageFilter, FilterUnread> f)
 		{
 			return new InboxFilteredByUnread(this.Url);

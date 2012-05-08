@@ -7,18 +7,6 @@ namespace ExchangeLINQ.Search
 {
 	public class SearchEntry : State
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="SearchEntry"/> class.
-		/// </summary>
-		/// <param name="url">The URL.</param>
-		internal SearchEntry(ExchangeUrl url)
-		{
-			Contract.Requires(url != null);
-
-			this.Url = url;
-			this.Url.QueryUrl = UrlConstants.SearchUrl;
-		}
-
 		#region Questions
 
 		public SearchFilteredByTagged Where(Func<ISearchTaggedInTitle, FilterTags> f)

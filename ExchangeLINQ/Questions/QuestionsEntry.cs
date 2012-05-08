@@ -9,18 +9,6 @@ namespace ExchangeLINQ.Questions
 {
 	public class QuestionsEntry : ProcessorState<Question>
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="QuestionsEntry"/> class.
-		/// </summary>
-		/// <param name="url">The URL.</param>
-		internal QuestionsEntry(ExchangeUrl url)
-		{
-			Contract.Requires(url != null);
-
-			this.Url = url;
-			this.Url.QueryUrl = UrlConstants.QuestionsUrl;
-		}
-
 		#region Questions
 		
 		public QuestionsFilteredById Where(Func<IQuestionIdTagsLinksToIsRelatedToPostingUserIsFeaturedIsUnansweredHasNoAnswersPageFromDateFilter, FilterIds> f)

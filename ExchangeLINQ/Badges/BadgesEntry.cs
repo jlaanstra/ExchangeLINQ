@@ -8,16 +8,6 @@ namespace ExchangeLINQ.Badges
 {
 	public class BadgesEntry : ProcessorState<Badge>
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="BadgesEntry"/> class.
-		/// </summary>
-		/// <param name="url">The URL.</param>
-		internal BadgesEntry(ExchangeUrl url)
-		{
-			this.Url = url;
-			this.Url.QueryUrl = UrlConstants.BadgesUrl;
-		}
-
 		public BadgesFilteredById Where(Func<IBadgesNameIdsNonTagBasedRecentlyAwardedTagBasedPageFromDateFilter, FilterIds> f)
 		{
 			return new BadgesFilteredById(this.Url, f(new BadgesInterfacesImpl()));

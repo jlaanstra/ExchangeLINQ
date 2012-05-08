@@ -8,24 +8,11 @@ namespace ExchangeLINQ.Answers
 {
 	public class AnswersFilteredByMe : ProcessorState<Answer>
 	{
-		private FilterMe me;
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="AnswersFilteredByMe"/> class.
-		/// </summary>
-		/// <param name="url">The URL.</param>
-		/// <param name="me">Me.</param>
-		internal AnswersFilteredByMe(ExchangeUrl url, FilterMe me)
-		{
-			this.Url = url;
-			this.Url.QueryUrl = UrlConstants.AnswersByMeUrl;
-
-			this.me = me;
-		}
-
 		public AnswersFilteredByMeTopForTags Where(Func<IAnswersIsTopAnswerForTagPageFromDateFilter, FilterTags> f)
 		{
-			return new AnswersFilteredByMeTopForTags(this.Url, this.me, f(new AnswersInterfacesImpl()));
+			FilterTags tags = f(new AnswersInterfacesImpl());
+			this.Url.QueryUrl = string.Format(UrlConstants.TopAnswersByTagByMeUrl, string.Join(";", tags.Value));
+			return new AnswersFilteredByMeTopForTags() { Url = this.Url };
 		}
 
 		#region Complex

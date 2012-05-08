@@ -8,24 +8,13 @@ namespace ExchangeLINQ.Answers
 {
 	public class AnswersFilteredByUserId : ProcessorState<Answer>
 	{
-		private FilterUserIds ids;
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="AnswersFilteredByUserId"/> class.
-		/// </summary>
-		/// <param name="url">The URL.</param>
-		/// <param name="ids">The ids.</param>
-		internal AnswersFilteredByUserId(ExchangeUrl url, FilterUserIds ids)
-		{
-			this.Url = url;
-			this.Url.QueryUrl = string.Format(UrlConstants.AnswersByUserIdUrl, string.Join(";", ids.Value));
-
-			this.ids = ids;
-		}
+		public FilterUserIds Ids { get; set; }
 
 		public AnswersFilteredByUserIdTopForTags Where(Func<IAnswersIsTopAnswerForTagPageFromDateFilter, FilterTags> f)
 		{
-			return new AnswersFilteredByUserIdTopForTags(this.Url, this.ids, f(new AnswersInterfacesImpl()));
+			FilterTags tags = f(new AnswersInterfacesImpl());
+			this.Url.QueryUrl = string.Format(UrlConstants.TopAnswersByTagByUserIdUrl, string.Join(";", Ids.Value), string.Join(";", tags.Value));
+			return new AnswersFilteredByUserIdTopForTags() { Url = this.Url };
 		}
 
 		#region Complex

@@ -8,17 +8,6 @@ namespace ExchangeLINQ.Applications
 {
 	public class ApplicationsFilteredByTokensDeauthenticate : ProcessorState<AccessToken>
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="ApplicationsFilteredByTokensDeauthenticate"/> class.
-		/// </summary>
-		/// <param name="url">The URL.</param>
-		/// <param name="tokens">The tokens.</param>
-		internal ApplicationsFilteredByTokensDeauthenticate(ExchangeUrl url, FilterTokens tokens)
-		{
-			this.Url = url;
-			this.Url.QueryUrl = string.Format(UrlConstants.DeauthenticateAppsByAccessTokensUrl, String.Join(";", tokens));
-		}
-
 		public FilteredByPage<AccessToken> Where(Func<IPage, FilterPage> f)
 		{
 			FilterPage filter = f(new InterfacesImpl());

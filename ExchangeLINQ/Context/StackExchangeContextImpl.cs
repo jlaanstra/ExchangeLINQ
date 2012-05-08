@@ -11,6 +11,7 @@ using ExchangeLINQ.Sites;
 using ExchangeLINQ.AssociatedUsers;
 using ExchangeLINQ.Inbox;
 using ExchangeLINQ.Applications;
+using ExchangeLINQ.Errors;
 
 namespace ExchangeLINQ.Context
 {
@@ -44,7 +45,7 @@ namespace ExchangeLINQ.Context
 		/// </summary>
 		public AccessTokensEntry AccessTokens()
 		{
-			return new AccessTokensEntry(this.CreateUrl());
+			return new AccessTokensEntry() { Url = this.CreateUrl() };
 		}
 
 		/// <summary>
@@ -52,7 +53,18 @@ namespace ExchangeLINQ.Context
 		/// </summary>
 		public ApplicationsEntry Applications()
 		{
-			return new ApplicationsEntry(this.CreateUrl());
+			return new ApplicationsEntry() { Url = this.CreateUrl() };
+		}
+
+		/// <summary>
+		/// Errorses this instance.
+		/// </summary>
+		/// <returns></returns>
+		public ErrorsEntry Errors()
+		{
+			ExchangeUrl url = this.CreateUrl();
+			url.QueryUrl = UrlConstants.ErrorsUrl;
+			return new ErrorsEntry() { Url = url };
 		}
 		
 		/// <summary>
@@ -60,7 +72,9 @@ namespace ExchangeLINQ.Context
 		/// </summary>
 		public InboxEntry Inbox()
 		{
-			return new InboxEntry(this.CreateUrl());
+			ExchangeUrl url = this.CreateUrl();
+			url.QueryUrl = UrlConstants.InboxUrl;
+			return new InboxEntry() { Url = url };
 		}
 
 		/// <summary>
@@ -68,7 +82,9 @@ namespace ExchangeLINQ.Context
 		/// </summary>
 		public AssociatedUsersEntry AssociatedUsers()
 		{
-			return new AssociatedUsersEntry(this.CreateUrl());
+			ExchangeUrl url = this.CreateUrl();
+			url.QueryUrl = UrlConstants.AssociatedMeUrl;
+			return new AssociatedUsersEntry() { Url = url };
 		}
 
 		/// <summary>
@@ -76,7 +92,9 @@ namespace ExchangeLINQ.Context
 		/// </summary>
 		public SitesEntry Sites()
 		{
-			return new SitesEntry(this.CreateUrl());
+			ExchangeUrl url = this.CreateUrl();
+			url.QueryUrl = UrlConstants.SitesUrl;
+			return new SitesEntry() { Url = url };
 		}
 
 		#endregion
@@ -85,37 +103,49 @@ namespace ExchangeLINQ.Context
 
 		public AnswersEntry Answers(string apiSiteParameter)
 		{
-			return new AnswersEntry(this.CreateUrl(apiSiteParameter));
+			ExchangeUrl url = this.CreateUrl(apiSiteParameter);
+			url.QueryUrl = UrlConstants.AnswersUrl;
+			return new AnswersEntry() { Url = url };
 		}
 
 		public BadgesEntry Badges(string apiSiteParameter)
 		{
-			return new BadgesEntry(this.CreateUrl(apiSiteParameter));
+			ExchangeUrl url = this.CreateUrl(apiSiteParameter);
+			url.QueryUrl = UrlConstants.BadgesUrl;
+			return new BadgesEntry() { Url = this.CreateUrl(apiSiteParameter) };
 		}
 
 		public CommentsEntry Comments(string apiSiteParameter)
 		{
-			return new CommentsEntry(this.CreateUrl(apiSiteParameter));
+			ExchangeUrl url = this.CreateUrl(apiSiteParameter);
+			url.QueryUrl = UrlConstants.CommentsUrl;
+			return new CommentsEntry() { Url = this.CreateUrl(apiSiteParameter) };
 		}
 
 		public QuestionsEntry Questions(string apiSiteParameter)
 		{
-			return new QuestionsEntry(this.CreateUrl(apiSiteParameter));
+			ExchangeUrl url = this.CreateUrl(apiSiteParameter);
+			url.QueryUrl = UrlConstants.QuestionsUrl;
+			return new QuestionsEntry() { Url = url };
 		}
 
 		public SearchEntry Search(string apiSiteParameter)
 		{
-			return new SearchEntry(this.CreateUrl(apiSiteParameter));
+			ExchangeUrl url = this.CreateUrl(apiSiteParameter);
+			url.QueryUrl = UrlConstants.SearchUrl;
+			return new SearchEntry() { Url = url };
 		}
 
 		public TagsEntry Tags(string apiSiteParameter)
 		{
-			return new TagsEntry(this.CreateUrl(apiSiteParameter));
+			ExchangeUrl url = this.CreateUrl(apiSiteParameter);
+			url.QueryUrl = UrlConstants.TagsUrl;
+			return new TagsEntry() { Url = url };
 		}
 
 		public UsersEntry Users(string apiSiteParameter)
 		{
-			return new UsersEntry(this.CreateUrl(apiSiteParameter));
+			return new UsersEntry() { Url = this.CreateUrl(apiSiteParameter) };
 		}
 
 		#endregion

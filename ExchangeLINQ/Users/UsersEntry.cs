@@ -9,15 +9,6 @@ namespace ExchangeLINQ.Users
 {
 	public class UsersEntry : ProcessorState<User>
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="UsersEntry"/> class.
-		/// </summary>
-		/// <param name="url">The URL.</param>
-		internal UsersEntry(ExchangeUrl url)
-		{
-			this.Url = url;
-		}
-
 		public UsersFilteredByName Where(Func<IUsersNameIdMeIsModeratorPageFromDateFilter, FilterName> f)
 		{
 			return new UsersFilteredByName(this.Url, f(new UsersInterfacesImpl()));

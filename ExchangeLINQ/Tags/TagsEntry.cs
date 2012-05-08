@@ -11,12 +11,6 @@ namespace ExchangeLINQ.Tags
 {
 	public class TagsEntry : ProcessorState<Tag>
 	{
-		internal TagsEntry(ExchangeUrl url)
-		{
-			this.Url = url;
-			this.Url.QueryUrl = UrlConstants.TagsUrl;
-		}
-
 		public TagsFilteredByModeratorOnly Where(Func<ITagsModeratorOnlyRequiredNamesUserPageFromDateFilter, FilterModeratorOnly> f)
 		{
 			return new TagsFilteredByModeratorOnly(this.Url, f(new TagsInterfacesImpl()));

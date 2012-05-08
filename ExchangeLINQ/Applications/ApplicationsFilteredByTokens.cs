@@ -6,19 +6,8 @@ namespace ExchangeLINQ.Applications
 {
 	public class ApplicationsFilteredByTokens : State
 	{
-		private FilterTokens tokens;
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="ApplicationsFilteredByTokens"/> class.
-		/// </summary>
-		/// <param name="url">The URL.</param>
-		/// <param name="tokens">The tokens.</param>
-		internal ApplicationsFilteredByTokens(ExchangeUrl url, FilterTokens tokens)
-		{
-			this.Url = url;
-			this.tokens = tokens;
-		}
-
+		public FilterTokens Tokens { get; set; }
+		
 		/// <summary>
 		/// Helper function to filter tokens based on a set of ids.
 		/// </summary>
@@ -26,7 +15,8 @@ namespace ExchangeLINQ.Applications
 		/// <returns></returns>
 		public ApplicationsFilteredByTokensDeauthenticate Where(Func<IApplicationsDeauthenticate, FilterDeauthenticate> f)
 		{
-			return new ApplicationsFilteredByTokensDeauthenticate(this.Url, this.tokens);
+			this.Url.QueryUrl = string.Format(UrlConstants.DeauthenticateAppsByAccessTokensUrl, String.Join(";", Tokens));
+			return new ApplicationsFilteredByTokensDeauthenticate() { Url = this.Url };
 		}
 	}
 }

@@ -10,18 +10,6 @@ namespace ExchangeLINQ.Comments
 {
 	public class CommentsEntry : ProcessorState<Comment>
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="CommentsEntry"/> class.
-		/// </summary>
-		/// <param name="url">The URL.</param>
-		internal CommentsEntry(ExchangeUrl url)
-		{
-			Contract.Requires(url != null);
-
-			this.Url = url;
-			this.Url.QueryUrl = UrlConstants.CommentsUrl;
-		}
-
 		#region Where
 
 		public CommentsFilteredById Where(Func<ICommentsIdPostIdQuestionIdAnswerIdUserIdMePageFromDateFilter, FilterIds> f)

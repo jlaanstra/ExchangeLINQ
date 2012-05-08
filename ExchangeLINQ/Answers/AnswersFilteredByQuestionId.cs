@@ -8,17 +8,6 @@ namespace ExchangeLINQ.Answers
 {
 	public class AnswersFilteredByQuestionId : ProcessorState<Answer>
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="AnswersFilteredByQuestionId"/> class.
-		/// </summary>
-		/// <param name="url">The URL.</param>
-		/// <param name="ids">The ids.</param>
-		internal AnswersFilteredByQuestionId(ExchangeUrl url, FilterIds ids)
-		{
-			this.Url = url;
-			this.Url.QueryUrl = string.Format(UrlConstants.AnswersByQuestionIdUrl, string.Join(";", ids.Value));
-		}
-
 		#region Complex
 
 		public FilteredByPage<Answer> Where(Func<IAnswersIdQuestionPostingUserPageFromDateFilter, FilterPage> f)

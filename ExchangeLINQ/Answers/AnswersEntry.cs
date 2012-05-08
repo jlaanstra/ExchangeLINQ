@@ -9,23 +9,15 @@ namespace ExchangeLINQ.Answers
 	public class AnswersEntry : ProcessorState<Answer>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="AnswersEntry"/> class.
-		/// </summary>
-		/// <param name="url">The URL.</param>
-		internal AnswersEntry(ExchangeUrl url)
-		{
-			this.Url = url;
-			this.Url.QueryUrl = UrlConstants.AnswersUrl;
-		}
-
-		/// <summary>
 		/// Implements the Select query pattern.
 		/// </summary>
 		/// <param name="f">The f.</param>
 		/// <returns></returns>
 		public AnswersFilteredById Where(Func<IAnswersIdQuestionPostingUserPageFromDateFilter, FilterIds> f)
 		{
-			return new AnswersFilteredById(this.Url, f(new AnswersInterfacesImpl()));
+			FilterIds ids = f(new AnswersInterfacesImpl());
+			this.Url.QueryUrl = string.Format(UrlConstants.AnswersByIdUrl, string.Join(";", ids.Value));
+			return new AnswersFilteredById() { Url = this.Url };
 		}
 
 		/// <summary>
@@ -35,7 +27,9 @@ namespace ExchangeLINQ.Answers
 		/// <returns></returns>
 		public AnswersFilteredByQuestionId Where(Func<IAnswersIdQuestionPostingUserPageFromDateFilter, FilterQuestionIds> f)
 		{
-			return new AnswersFilteredByQuestionId(this.Url, f(new AnswersInterfacesImpl()));
+			FilterQuestionIds ids = f(new AnswersInterfacesImpl());
+			this.Url.QueryUrl = string.Format(UrlConstants.AnswersByQuestionIdUrl, string.Join(";", ids.Value));
+			return new AnswersFilteredByQuestionId() { Url = this.Url };
 		}
 
 		/// <summary>
@@ -45,7 +39,21 @@ namespace ExchangeLINQ.Answers
 		/// <returns></returns>
 		public AnswersFilteredByUserId Where(Func<IAnswersIdQuestionPostingUserPageFromDateFilter, FilterUserIds> f)
 		{
-			return new AnswersFilteredByUserId(this.Url, f(new AnswersInterfacesImpl()));
+			FilterUserIds ids = f(new AnswersInterfacesImpl());
+			this.Url.QueryUrl = string.Format(UrlConstants.AnswersByUserIdUrl, string.Join(";", ids.Value));
+			return new AnswersFilteredByUserId() { Url = this.Url, Ids = ids };
+		}
+
+		/// <summary>
+		/// Wheres the specified f.
+		/// </summary>
+		/// <param name="f">The f.</param>
+		/// <returns></returns>
+		public AnswersFilteredByMe Where(Func<IAnswersIdQuestionPostingUserPageFromDateFilter, FilterMe> f)
+		{
+			FilterMe me = f(new AnswersInterfacesImpl());
+			this.Url.QueryUrl = UrlConstants.AnswersByMeUrl;
+			return new AnswersFilteredByMe() { Url = this.Url };
 		}
 
 		#region Complex
